@@ -7,7 +7,7 @@ using BE;
 
 namespace DAL
 {
-    interface Idal
+    public interface Idal
     {
         void AddSpecialization(Specialization specialisation);
 		void RemoveSpecialization(Specialization specialisation);
@@ -30,6 +30,6 @@ namespace DAL
 		List<Employer> ListEmployer { get; set;}
 		List<Contract> ListContract { get; set;}
 
-		BankAccount ListBankBranches();
+		List<BankAccount> ListBankBranches();
     }
 }
