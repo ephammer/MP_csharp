@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    class Contract
+    public class Contract
     {
         int NumberContract { get; set; }
         // TODO: Limit NumberContract to number with 8 digits

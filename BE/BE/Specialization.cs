@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    class Specialization
+    public class Specialization
     {
         int NbProfessionals { get; set; }
         enum NameField {DataStructure,Networks, Security, MobileDevelopment };
