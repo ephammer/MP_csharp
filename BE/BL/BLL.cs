@@ -3,23 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BE;
 using DAL;
+using BE;
+using DS;
 
-namespace DS
+namespace BL
 {
-    public class Dal_imp : Idal
+    public class BLL:IBL
     {
+        private Dal_imp dataSource;
+
+        public BLL()
+        {
+            dataSource = new Dal_imp();
+        }
+
         public List<Contract> ListContract
         {
             get
             {
-                return DataSource.listContract;
+                return dataSource.ListContract;
             }
 
             set
             {
-                DataSource.listContract = value;
+                dataSource.ListContract = value;
             }
         }
 
@@ -27,12 +35,12 @@ namespace DS
         {
             get
             {
-                return DataSource.listEmployees;
+                return dataSource.ListEmployees;
             }
 
             set
             {
-                DataSource.listEmployees = value;
+                dataSource.ListEmployees = value;
             }
         }
 
@@ -40,12 +48,12 @@ namespace DS
         {
             get
             {
-                return DataSource.listEmployer;
+                return dataSource.ListEmployer;
             }
 
             set
             {
-                DataSource.listEmployer = value;
+                dataSource.ListEmployer = value;
             }
         }
 
@@ -53,60 +61,75 @@ namespace DS
         {
             get
             {
-                return DataSource.listSpecialzation;
+                return dataSource.ListSpecialzation;
             }
 
             set
             {
-                DataSource.listSpecialzation = value;
+                dataSource.ListSpecialzation = value;
             }
         }
 
         public void AddContract(Contract contract)
         {
-            DataSource.listContract.Add(contract);
+            throw new NotImplementedException();
         }
 
         public void AddEmployee(Employee employee)
         {
-            DataSource.listEmployees.Add(employee);
+            if(calculateAge(employee.Birthday)>=18)
+            {
+                dataSource.AddEmployee(employee);
+            }
+            else
+            {
+                throw new Exception();
+            }
         }
 
         public void AddEmployer(Employer employer)
         {
-            DataSource.listEmployer.Add(employer);
+            throw new NotImplementedException();
         }
 
         public void AddSpecialization(Specialization specialisation)
         {
-            DataSource.listSpecialzation.Add(specialisation);
+            throw new NotImplementedException();
         }
 
         public List<BankAccount> ListBankBranches()
         {
-            List<BankAccount> listBankBranches = new List<BankAccount>(5);
-
-            return listBankBranches;
+            throw new NotImplementedException();
         }
 
         public void RemoveContract(Contract contract)
         {
-            DataSource.listContract.Remove(contract);
+            throw new NotImplementedException();
         }
 
         public void RemoveEmployer(Employer employer)
         {
-            DataSource.listEmployer.Remove(employer);
+            throw new NotImplementedException();
         }
 
         public void RemoverEmployee(Employee employee)
         {
-            DataSource.listEmployees.Remove(employee);
+            throw new NotImplementedException();
         }
 
         public void RemoveSpecialization(Specialization specialisation)
         {
-            DataSource.listSpecialzation.Remove(specialisation);
+            throw new NotImplementedException();
+        }
+
+        private int calculateAge(DateTime birthday)
+        {
+            int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
+            int intBirthday = int.Parse(birthday.ToString("yyyyMMdd"));
+
+            return (now - intBirthday) / 10000;
         }
     }
+
+   
 }

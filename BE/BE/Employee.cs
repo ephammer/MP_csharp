@@ -12,7 +12,7 @@ namespace BE
         string FirstName { get; set; }
         string LastName { get; set; }
 
-        DateTime Birthday { get; set; }
+        public DateTime Birthday { get; set; }
         int PhoneNumber { get; set; }
         string Adress { get; set; }
         enum Degree { Certificate,Bachelor,Master,Phd,Student};

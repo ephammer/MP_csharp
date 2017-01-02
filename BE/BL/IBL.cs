@@ -7,7 +7,7 @@ using BE;
 
 namespace BL
 {
-    interface IBL
+    public interface IBL
     {
         void AddSpecialization(Specialization specialisation);
         void RemoveSpecialization(Specialization specialisation);
