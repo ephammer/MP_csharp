@@ -8,17 +8,31 @@ namespace BE
 {
     public class Employer
     {
-        int Id { get; set; }
-        bool Compagnie { get; set; }
-        string FirstName { get; set; }
-        string CompagnieName { get; set; }
-        int PhoneNumber { get; set; }
-        string Adress { get; set; }
-        enum NameField { DataStructure, Networks, Security, MobileDevelopment };
-        DateTime DateCreation { get; set; }
+        public int Id { get; set; }
+        public bool Compagnie { get; set; }
+        public string FirstName { get; set; }
+        public string CompagnieName { get; set; }
+        public int PhoneNumber { get; set; }
+        public string Adress { get; set; }
+        public enum NameField { DataStructure, Networks, Security, MobileDevelopment };
+        public NameField Field { get; set; }
+        public DateTime DateCreation { get; set; }
         public override string ToString()
         {
             return CompagnieName;
+        }
+
+        public Employer(int id, bool compagnie, string firstName, string compagnieName,
+            int phoneNumber, string adress, NameField field, DateTime dateCreation)
+        {
+            Id = id;
+            Compagnie = compagnie;
+            FirstName = firstName;
+            CompagnieName = compagnieName;
+            PhoneNumber = phoneNumber;
+            Adress = adress;
+            Field = field;
+            DateCreation = dateCreation;
         }
     }
 }
