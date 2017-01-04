@@ -225,6 +225,7 @@ namespace BL
             }
         }
 
+        // TODO: Not working, needs fix
         public List<Employee> groupEmployersByProfit(bool order = false)
         {
 
@@ -248,7 +249,25 @@ namespace BL
 
         }
 
+        public void UpdateSpecialization(Specialization UpdatedSpecialisation)
+        {
+            dataSource.UpdateSpecialization(UpdatedSpecialisation);
+        }
 
+        public void UpdatedEmployer(Employer UpdatedEmployer)
+        {
+            dataSource.UpdatedEmployer(UpdatedEmployer);
+        }
+
+        public void UpdateEnployee(Employee UpdatedEmployee)
+        {
+            dataSource.UpdateEnployee(UpdatedEmployee);
+        }
+
+        public void UpdateContract(Contract UpdatedContract)
+        {
+            dataSource.UpdateContract(UpdatedContract);
+        }
     }
 
    

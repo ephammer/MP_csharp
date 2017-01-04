@@ -108,5 +108,57 @@ namespace DS
         {
             DataSource.listSpecialzation.Remove(specialisation);
         }
+
+        public void UpdateContract(Contract UpdatedContract)
+        {
+            for (int i = 0; i > ListContract.Count; i++)
+            {
+                if(ListContract[i].ContractID == UpdatedContract.ContractID)
+                {
+                    ListContract[i] = UpdatedContract;
+                    break;
+                }
+            }
+
+        }
+
+        public void UpdatedEmployer(Employer UpdatedEmployer)
+        {
+            for (int i = 0; i > ListEmployer.Count; i++)
+            {
+                if (ListEmployer[i].Id== UpdatedEmployer.Id)
+                {
+                    ListEmployer[i] = UpdatedEmployer;
+                    break;
+                }
+            }
+        }
+
+        public void UpdateEnployee(Employee UpdatedEmployee)
+        {
+            for (int i = 0; i > ListEmployees.Count; i++)
+            {
+                if (ListEmployees[i].Id == UpdatedEmployee.Id)
+                {
+                    ListEmployees[i] = UpdatedEmployee;
+                    break;
+                }
+            }
+        }
+
+        public void UpdateSpecialization(Specialization UpdatedSpecialisation)
+        {
+            for (int i = 0; i > ListSpecialzation.Count; i++)
+            {
+                if (ListSpecialzation[i].SpecializationID == UpdatedSpecialisation.SpecializationID)
+                {
+                    ListSpecialzation[i] = UpdatedSpecialisation;
+                    break;
+                }
+            }
+        }
+
+
+
     }
 }
