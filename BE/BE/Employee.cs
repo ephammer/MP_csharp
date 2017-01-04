@@ -11,7 +11,7 @@ namespace BE
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
+        public int SpecializationID { get; set; }
         public DateTime Birthday { get; set; }
         public int PhoneNumber { get; set; }
         public string Adress { get; set; }
@@ -25,7 +25,7 @@ namespace BE
         }
 
         public Employee(int id, string firstName, string lastName, DateTime birthday, 
-            int phoneNumber, string adress, Degree degree, bool militaryService, BankAccount bankAccount)
+            int phoneNumber, string adress, Degree degree, int specializationID, bool militaryService, BankAccount bankAccount)
         {
             Id = id;
             FirstName = firstName;
@@ -33,6 +33,7 @@ namespace BE
             Birthday = birthday;
             PhoneNumber = phoneNumber;
             this.degree = degree;
+            this.SpecializationID = specializationID;
             MilitaryService = militaryService;
             this.bankAccount = bankAccount;
         }

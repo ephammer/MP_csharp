@@ -72,7 +72,30 @@ namespace BL
 
         public void AddContract(Contract contract)
         {
-            throw new NotImplementedException();
+            int indexEmployer = dataSource.ListEmployer.FindIndex(v => v.Id == contract.EmployerID);
+            int indexEmployee = dataSource.ListEmployees.FindIndex(v => v.Id == contract.EmployeeID);
+
+            /*
+            bool employerExists = false;
+            bool employeeExists = false;
+
+            for (int i = 0; i < dataSource.ListEmployer.Count; i++)
+            {
+                if (dataSource.ListEmployer[i].Id == contract.EmployerID)
+                    employerExists = true;
+            }
+
+            for(int i = 0; i<dataSource.ListEmployees.Count;i++)
+            {
+                if (dataSource.ListEmployees[i].Id == contract.EmployeeID)
+                    employeeExists = true;
+            }
+            */
+
+            if (indexEmployee!=-1 && indexEmployer!=-1)
+                dataSource.ListContract.Add(contract);
+            else
+                throw new Exception("No such employer or employee" );
         }
 
         public void AddEmployee(Employee employee)
@@ -83,19 +106,20 @@ namespace BL
             }
             else
             {
-                throw new Exception();
+                throw new Exception("The employee must be at least 18");
             }
         }
 
         public void AddEmployer(Employer employer)
         {
-            throw new NotImplementedException();
+            dataSource.AddEmployer(employer);
         }
 
         public void AddSpecialization(Specialization specialisation)
         {
-            throw new NotImplementedException();
+            dataSource.AddSpecialization(specialisation);
         }
+        
 
         public List<BankAccount> ListBankBranches()
         {
@@ -104,22 +128,22 @@ namespace BL
 
         public void RemoveContract(Contract contract)
         {
-            throw new NotImplementedException();
+            dataSource.RemoveContract(contract);
         }
 
         public void RemoveEmployer(Employer employer)
         {
-            throw new NotImplementedException();
+            dataSource.RemoveEmployer(employer);
         }
 
         public void RemoverEmployee(Employee employee)
         {
-            throw new NotImplementedException();
+            dataSource.RemoverEmployee(employee);
         }
 
         public void RemoveSpecialization(Specialization specialisation)
         {
-            throw new NotImplementedException();
+            dataSource.RemoveSpecialization(specialisation);
         }
 
         private int calculateAge(DateTime birthday)
@@ -129,6 +153,102 @@ namespace BL
 
             return (now - intBirthday) / 10000;
         }
+
+        public delegate bool conditionDelegate(Contract contract);
+
+        public List<Contract> FindAllContracts( conditionDelegate cond)
+        {
+            var list = from item in ListContract where cond(item) select item;
+            
+            return (List<Contract>) list;
+
+        }
+
+        public bool findAllInterview(Contract contract)
+        {
+            return contract.Interview;
+        }
+
+        public bool findAllContractSignature(Contract contract)
+        {
+            return contract.ContractSignature;
+
+        }
+
+        public int CountAllContracts(conditionDelegate cond)
+        {
+            var count = from item in ListContract where cond(item) select item;
+
+            return count.Count<Contract>();
+        }
+
+        public List<Employee> groupEmployersBySpecialization(bool order = false)
+        {
+           
+            if (order)
+            {
+                var list = from employee in ListEmployees
+                           group employee by employee.SpecializationID into newList
+                           orderby newList.Key select newList;
+
+                return (List<Employee>) list;
+            }
+            else
+            {
+                var list = from employee in ListEmployees
+                           group employee by employee.SpecializationID into newList
+                           select newList;
+
+                return (List<Employee>)list;
+            }
+        }
+
+        public List<Employee> groupEmployersByAdress(bool order = false)
+        {
+
+            if (order)
+            {
+                var list = from employee in ListEmployees
+                           group employee by employee.Adress into newList
+                           orderby newList.Key
+                           select newList;
+
+                return (List<Employee>)list;
+            }
+            else
+            {
+                var list = from employee in ListEmployees
+                           group employee by employee.Adress into newList
+                           select newList;
+
+                return (List<Employee>)list;
+            }
+        }
+
+        public List<Employee> groupEmployersByProfit(bool order = false)
+        {
+
+            if (order)
+            {
+                var list = from employee in ListEmployees
+                           group employee by employee.SpecializationID into newList
+                           orderby newList.Key
+                           select newList;
+
+                return (List<Employee>)list;
+            }
+            else
+            {
+                var list = from employee in ListEmployees
+                           group employee by employee.SpecializationID into newList
+                           select newList;
+
+                return (List<Employee>)list;
+            }
+
+        }
+
+
     }
 
    
