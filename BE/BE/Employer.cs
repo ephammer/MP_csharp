@@ -19,7 +19,9 @@ namespace BE
         public DateTime DateCreation { get; set; }
         public override string ToString()
         {
-            return CompagnieName;
+            string employer = null;
+            employer += "ID: " + Id;
+            return employer;
         }
 
         public Employer(int id, bool compagnie, string firstName, string compagnieName,

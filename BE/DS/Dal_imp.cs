@@ -10,6 +10,10 @@ namespace DS
 {
     public class Dal_imp : Idal
     {
+        public Dal_imp()
+        {
+            new DataSource();
+        }
         public List<Contract> ListContract
         {
             get

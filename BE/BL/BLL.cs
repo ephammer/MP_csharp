@@ -57,6 +57,14 @@ namespace BL
             }
         }
 
+        public string printListEmployer()
+        {
+            string allEmployer = null;
+            for (int i = 0; i < ListEmployer.Count; i++)
+                allEmployer += ListEmployer[i].ToString() + "\n";
+            return allEmployer;
+        }
+
         public List<Specialization> ListSpecialzation
         {
             get
