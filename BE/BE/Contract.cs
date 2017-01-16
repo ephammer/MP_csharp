@@ -11,10 +11,7 @@ namespace BE
         public int ContractID { get; set; }
         // TODO: Limit NumberContract to number with 8 digits
 
-        // TODO: modify get and set
         public int EmployerID { get; set; }
-        
-        // TODO: modify get and set
         public int EmployeeID { get; set; }
 
         public bool Interview { get; set; }

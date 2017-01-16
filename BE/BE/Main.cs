@@ -12,14 +12,24 @@ namespace BE
 
     public struct BankAccount
     {
-        int BankNumber { get; set; }
-        string NameBank { get; set; }
-        int BranchNumber { get; set; }
-        string BranchAdress { get; set; }
-        string BranchCity { get; set; }
-        int AccountNumber { get; set; }
+        public int BankNumber { get; set; }
+        public string NameBank { get; set; }
+        public int BranchNumber { get; set; }
+        public string BranchAdress { get; set; }
+        public string BranchCity { get; set; }
+        public int AccountNumber { get; set; }
 
-        BankAccount(
+        public override string ToString()
+        {
+            return "Bank number: " + Convert.ToString(BankNumber) + '\n'
+                + "Name of bank: " + NameBank + '\n'
+                + "Branch number: " + Convert.ToString(BranchNumber) + '\n'
+                + "Branch Adress: " + BranchAdress + '\n'
+                + "Branch City: " + BranchCity + '\n'
+                + "Account number" + Convert.ToString(AccountNumber);
+
+        }
+        public BankAccount(
             int BankNumber,
             string NameBank,
             int BranchNumber, 

@@ -20,7 +20,14 @@ namespace BE
         public override string ToString()
         {
             string employer = null;
-            employer += "ID: " + Id;
+            employer += "ID: " + Id + '\n';
+            employer += "First name: " + FirstName + '\n';
+            if (Compagnie)
+                employer += "Compagnie: " + CompagnieName + '\n';
+            employer += "Phone number: " + PhoneNumber + '\n'
+                + "Adress: " + Adress + '\n'
+                + "Field: " + Convert.ToString(Field) + '\n'
+                + "Date of creation: " + Convert.ToString(DateCreation) + '\n';
             return employer;
         }
 

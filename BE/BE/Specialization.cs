@@ -22,15 +22,19 @@ namespace BE
 
         public override string ToString()
         {
-            return Name;
+            return "Name: " + Name + "\n" 
+                + "ID: " + Convert.ToString(SpecializationID) + "\n"
+                + "Field: " + Convert.ToString(Field) + "\n"
+                + "Minimum hours: " + Convert.ToString(MinHours) + '\n'
+                + "Maximum hours: " + Convert.ToString(MaxHours);
         }
 
         // Constructor
-        public Specialization(string name,NameField field, int nbProfessionals, int minHours, int maxHours)
+        public Specialization(string name,NameField field, int iDSpecialization, int minHours, int maxHours)
         {
             Name = name;
             Field = field;
-            SpecializationID = nbProfessionals;
+            SpecializationID = iDSpecialization;
             MinHours = minHours;
             MaxHours = maxHours;
         }

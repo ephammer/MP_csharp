@@ -65,6 +65,14 @@ namespace BL
             return allEmployer;
         }
 
+        public string printListEmployee()
+        {
+            string allEmployee = null;
+            for (int i = 0; i < ListEmployees.Count; i++)
+                allEmployee += ListEmployees[i].ToString() + "\n";
+            return allEmployee;
+        }
+
         public List<Specialization> ListSpecialzation
         {
             get
@@ -196,7 +204,7 @@ namespace BL
             if (order)
             {
                 var list = from employee in ListEmployees
-                           group employee by employee.SpecializationID into newList
+                           group employee by employee.Specialization.SpecializationID into newList
                            orderby newList.Key select newList;
 
                 return (List<Employee>) list;
@@ -204,7 +212,7 @@ namespace BL
             else
             {
                 var list = from employee in ListEmployees
-                           group employee by employee.SpecializationID into newList
+                           group employee by employee.Specialization.SpecializationID into newList
                            select newList;
 
                 return (List<Employee>)list;
@@ -240,7 +248,7 @@ namespace BL
             if (order)
             {
                 var list = from employee in ListEmployees
-                           group employee by employee.SpecializationID into newList
+                           group employee by employee.Specialization.SpecializationID into newList
                            orderby newList.Key
                            select newList;
 
@@ -249,7 +257,7 @@ namespace BL
             else
             {
                 var list = from employee in ListEmployees
-                           group employee by employee.SpecializationID into newList
+                           group employee by employee.Specialization.SpecializationID into newList
                            select newList;
 
                 return (List<Employee>)list;
