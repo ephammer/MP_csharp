@@ -73,6 +73,14 @@ namespace BL
             return allEmployee;
         }
 
+        public string printListContracts()
+        {
+            string allContracts = null;
+            for (int i = 0; i < ListContract.Count; i++)
+                allContracts += ListContract[i].ToString() + "\n";
+            return allContracts;
+        }
+
         public List<Specialization> ListSpecialzation
         {
             get

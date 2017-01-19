@@ -23,7 +23,28 @@ namespace BE
 
         public override string ToString()
         {
-            return base.ToString();
+            string contract = "Contract ID: " + Convert.ToString(ContractID) + "\n" ;
+            contract += "Employers ID: " + Convert.ToString(EmployerID) + "\n";
+            contract += "Employees ID: " + Convert.ToString(EmployeeID) + "\n";
+
+            if (Interview)
+                contract += "Interview: " + "Yes" + "\n";
+            else
+                contract += "Interview: " + "No" + "\n";
+
+            if (ContractSignature)
+                contract += "Signature: " + "Yes" + "\n";
+            else
+                contract += "Signature: " + "No" + "\n";
+
+            contract += "The hourly wage before Taxes: " + Convert.ToString(HourlyWageBrute) + "\n";
+            contract += "The hourly wage after Taxes: " + Convert.ToString(HourlyWageNet) + "\n";
+
+            contract += "The contract started the: " + Convert.ToString(StartContract) + "\n";
+            contract += "The contract ended the: " + Convert.ToString(EndContract) + "\n";
+            contract += "The total duration of the contract is: " + Convert.ToString(EndContract - StartContract); 
+
+            return contract;
         }
 
         public Contract(int contarctID, int emplyerID, int employeeID, bool interview, bool signature,

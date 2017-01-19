@@ -18,7 +18,7 @@ namespace PL
             Console.WriteLine("Date: " + DateTime.Now);
 
             Console.WriteLine("Please choose one of the following option:");
-            Console.WriteLine("0 - Exit\n" + "1 - Add new Employer\n" + "2 - Add new Employee\n" );
+            Console.WriteLine("0 - Exit\n" + "1 - Add new Employer\n" + "2 - Add new Employee\n" + "3 - Add new Contract\n");
 
             int input = Convert.ToInt32(Console.ReadLine());
 
@@ -37,11 +37,17 @@ namespace PL
                         Console.WriteLine("Your added a new Employee\n");
                         Console.WriteLine(bll.printListEmployee());
                         break;
+
+                    case 3: AddContract();
+                        Console.WriteLine("You added a new Contract");
+                        Console.WriteLine(bll.printListContracts());
+                        break;
+
                     default: return;
                 }
 
                 Console.WriteLine("Please choose one of the following option:");
-                Console.WriteLine("0 - Exit\n" + "1 - Add new Employer\n" + "2 - Add new Employee\n");
+                Console.WriteLine("0 - Exit\n" + "1 - Add new Employer\n" + "2 - Add new Employee\n" + "3 - Add new Contract\n");
                 input = Convert.ToInt32(Console.ReadLine());
 
 
@@ -179,7 +185,55 @@ namespace PL
                     Console.WriteLine(e);
                 }
             }
-                
+               
+            void AddContract()
+            {
+                Console.WriteLine("Enter the contract ID:");
+                var iD = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Enter the employers ID:");
+                var employerID = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Enter the employees ID:");
+                var employeeID = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Was there an interview?");
+                var interview = Convert.ToBoolean(Console.ReadLine());
+
+                Console.WriteLine("Was there a contract signature?");
+                var signature = Convert.ToBoolean(Console.ReadLine());
+
+                Console.WriteLine("Enter the hourly wage brute:");
+                var hourlyWageBrut = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("Enter the hourly wage net:");
+                var hourlyWageNet = Convert.ToInt32(Console.ReadLine());
+
+                Console.WriteLine("When does the contract start?");
+                var contractStart = Convert.ToDateTime(Console.ReadLine());
+
+                Console.WriteLine("When does the contract stop?");
+                var contractStop = Convert.ToDateTime(Console.ReadLine());
+
+                try
+                {
+                    bll.AddContract(
+                        new Contract(
+                            iD,
+                            employerID,
+                            employeeID,
+                            interview,
+                            signature,
+                            hourlyWageBrut,
+                            hourlyWageNet,
+                            contractStart,
+                            contractStop
+                        ));
+                }catch(Exception e)
+                {
+                    Console.WriteLine(e);
+                }
+            }
         }
 
         
