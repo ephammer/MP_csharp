@@ -53,5 +53,10 @@ namespace WpfApp
             else
                 MessageBox.Show("Please select item to delete");
         }
+
+        private void Update_Button_Click(object sender, RoutedEventArgs e)
+        {
+            new UpdateEmployer(ListEmployers.SelectedIndex).Show();
+        }
     }
 }

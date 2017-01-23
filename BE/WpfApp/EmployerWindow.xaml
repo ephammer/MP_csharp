@@ -36,7 +36,7 @@
             VerticalAlignment="Top"
             Width="50" 
             Grid.Row="2"
-            Grid.Column="1" Margin="0,0,0,0"/>
+            Grid.Column="1" Margin="0,0,0,0" Click="Update_Button_Click"/>
         <DataGrid 
             Grid.RowSpan="3"
             Height="auto"
