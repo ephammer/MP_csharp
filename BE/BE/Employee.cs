@@ -11,7 +11,7 @@ namespace BE
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public Specialization Specialization { get; set; }
+        public int SpecializationID { get; set; }
         public DateTime Birthday { get; set; }
         public int PhoneNumber { get; set; }
         public string Adress { get; set; }
@@ -25,7 +25,7 @@ namespace BE
                 + "Last Name: " + LastName + '\n'
                 + "ID: " + Convert.ToString(Id) + '\n'
                 + "Birthday: " + Convert.ToString(Birthday) +'\n'
-                + "Specialization: " + Convert.ToString(Specialization) + '\n'
+                + "Specialization: " + Convert.ToString(SpecializationID) + '\n'
                 + "PhoneNumber: " + Convert.ToString(PhoneNumber) + '\n'
                 + "Adress: " + Adress + '\n'
                 + "Degree: " + Convert.ToString(degree) + '\n'
@@ -34,7 +34,7 @@ namespace BE
         }
 
         public Employee(int id, string firstName, string lastName, DateTime birthday, 
-            int phoneNumber, string adress, Degree degree, Specialization specialization,
+            int phoneNumber, string adress, Degree degree, int specialization,
             bool militaryService, BankAccount bankAccount)
         {
             Id = id;
@@ -43,7 +43,7 @@ namespace BE
             Birthday = birthday;
             PhoneNumber = phoneNumber;
             this.degree = degree;
-            this.Specialization = specialization;
+            this.SpecializationID = specialization;
             MilitaryService = militaryService;
             this.bankAccount = bankAccount;
         }

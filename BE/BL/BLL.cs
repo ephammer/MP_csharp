@@ -124,17 +124,29 @@ namespace BL
 
         public void AddEmployee(Employee employee)
         {
-            if(CalculateAge(employee.Birthday)>=18)
+            bool added = false;
+            if (CalculateAge(employee.Birthday) >= 18)
             {
                 dataSource.AddEmployee(employee);
+                added = false;
             }
             else
             {
                 throw new Exception("The employee must be at least 18");
             }
+            for (int i = 0; i < ListSpecialzation.Count; i++)
+            {
+                if (employee.SpecializationID == ListSpecialzation[i].SpecializationID)
+                {
+                    dataSource.AddEmployee(employee);
+                    added = true;
+                    break;
+                }
+            }
+            if(added==false)
+                throw new Exception("The specializationID is incorrect");
         }
-
-        public void AddEmployer(Employer employer)
+            public void AddEmployer(Employer employer)
         {
             dataSource.AddEmployer(employer);
         }
@@ -212,7 +224,7 @@ namespace BL
             if (order)
             {
                 var list = from employee in ListEmployees
-                           group employee by employee.Specialization.SpecializationID into newList
+                           group employee by employee.SpecializationID into newList
                            orderby newList.Key select newList;
 
                 return (List<Employee>) list;
@@ -220,7 +232,7 @@ namespace BL
             else
             {
                 var list = from employee in ListEmployees
-                           group employee by employee.Specialization.SpecializationID into newList
+                           group employee by employee.SpecializationID into newList
                            select newList;
 
                 return (List<Employee>)list;
@@ -256,7 +268,7 @@ namespace BL
             if (order)
             {
                 var list = from employee in ListEmployees
-                           group employee by employee.Specialization.SpecializationID into newList
+                           group employee by employee.SpecializationID into newList
                            orderby newList.Key
                            select newList;
 
@@ -265,7 +277,7 @@ namespace BL
             else
             {
                 var list = from employee in ListEmployees
-                           group employee by employee.Specialization.SpecializationID into newList
+                           group employee by employee.SpecializationID into newList
                            select newList;
 
                 return (List<Employee>)list;

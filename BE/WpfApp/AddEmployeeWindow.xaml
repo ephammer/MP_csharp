@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="AddEmployeeWindow" Height="300" Width="300">
+        Title="AddEmployeeWindow" Height="500" Width="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="90*"/>
@@ -13,6 +13,14 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Height="auto">
             <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
                 <RowDefinition Height="auto" />
@@ -29,22 +37,47 @@
             </Grid.ColumnDefinitions>
             <Label Content="ID:"/>
             <TextBox Grid.Row="0" Grid.Column="1" Height="auto" Width="auto" MinWidth="40" Name="id" />
-            
+
             <Label Content="First name:" Grid.Row="1" />
             <TextBox Grid.Row="1" Grid.Column="1" Height="auto" Width="auto" MinWidth="60" Name="firstName" />
-            
+
             <Label Content="Last name:" Grid.Row="2" />
             <TextBox Grid.Row="2" Grid.Column="1" Height="auto" Width="auto" MinWidth="60" Name="LastName" />
-            
+
             <Label Content="Birthday:" Grid.Row="3"/>
             <DatePicker Grid.Row="3" Grid.Column="1"/>
 
             <Label Content="Phone number:" Grid.Row="5" Grid.Column="0"/>
             <TextBox Grid.Row="5" Grid.Column="1" Name="phoneNumber" />
+
             <Label Content="Adress:" Grid.Row="6" Grid.Column="0"/>
             <TextBox Grid.Row="6" Grid.Column="1" Name="adress" />
-            <Label Content="Field" Grid.Row="7" Grid.Column="0"/>
+
+            <Label Content="Degree:" Grid.Row="7" Grid.Column="0"/>
             <ComboBox Grid.Column="1" Grid.Row="7" Name="fields" />
+
+            <Label Content="Military Service:" Grid.Row="8" Grid.Column="0"/>
+            <CheckBox
+                Grid.Row="8"
+                Grid.Column="1"
+                Name="military" />
+
+            <Label Grid.Row="9" Grid.ColumnSpan="2" Content="Bank Information" Margin="35,0,-35,0" />
+
+            <Label Grid.Row="10" Content="Bank Number:"/>
+            <TextBox Grid.Row="10" Grid.Column="1" Name="BankNumber"/>
+
+            <Label Grid.Row="11" Content="Name of Bank:"/>
+            <TextBox Grid.Row="11" Grid.Column="1" Name="NameBank"/>
+
+            <Label Grid.Row="12" Content="Branch adress:"/>
+            <TextBox Grid.Row="12" Grid.Column="1" Name="BranchAdress"/>
+
+            <Label Grid.Row="13" Content="Branch city:"/>
+            <TextBox Grid.Row="13" Grid.Column="1" Name="BranchCity"/>
+
+            <Label Grid.Row="14" Content="Account number:"/>
+            <TextBox Grid.Row="14" Grid.Column="1" Name="AccountNumber"/>
         </Grid>
         <Button Width="40" 
                 Height="20"

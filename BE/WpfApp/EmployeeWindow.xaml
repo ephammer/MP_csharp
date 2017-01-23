@@ -7,9 +7,48 @@
         mc:Ignorable="d"
         Title="Employee" Height="300" Width="300">
     <Grid>
-        <Button Content="Add" HorizontalAlignment="Right" Margin="0,75,100,0" VerticalAlignment="Top" Width="75" Click="Add_Button_Click"/>
-        <Button Content="Remove" HorizontalAlignment="Right" Margin="0,100,100,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Update" HorizontalAlignment="Right" VerticalAlignment="Top" Width="75" Margin="0,125,100,0"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80*" />
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Button 
+            Content="Add" 
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Width="50" 
+            Click="Add_Button_Click"
+            Grid.Column="1" Margin="0,0,0,5"/>
+        <Button 
+            Content="Remove"
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Top" 
+            Width="50"
+            Grid.Column="1"
+            Grid.Row="1" Margin="0,0,0,5" Click="Remove_Button_Click"/>
+        <Button
+            Content="Update"
+            HorizontalAlignment="Right" 
+            VerticalAlignment="Top"
+            Width="50" 
+            Grid.Row="2"
+            Grid.Column="1" Margin="0,0,0,0" Click="Update_Button_Click"/>
+        <DataGrid 
+            Grid.RowSpan="3"
+            Height="auto"
+            Width="auto"
+            x:Name="ListEmployees" 
+            SelectionChanged="ListEmployees_SelectionChanged"
+            Loaded="ListEmployees_Loaded"
+            IsReadOnly="True"
+            >
+
+        </DataGrid>
+
 
     </Grid>
 </Window>

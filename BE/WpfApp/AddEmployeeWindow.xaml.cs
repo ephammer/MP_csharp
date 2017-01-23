@@ -22,6 +22,8 @@ namespace WpfApp
         public AddEmployeeWindow()
         {
             InitializeComponent();
+            this.fields.ItemsSource = Enum.GetValues(typeof(BE.Employee.Degree));
+
         }
 
         private void Save_Button_Click(object sender, RoutedEventArgs e)
