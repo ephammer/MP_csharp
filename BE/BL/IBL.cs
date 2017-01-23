@@ -22,7 +22,7 @@ namespace BL
         void AddEmployer(Employer employer);
         void RemoveEmployer(Employer employer);
         void UpdatedEmployer(Employer UpdatedEmployer);
-
+        string printListEmployer();
         /*
         void UpdateEmployerCompagnie(bool Compagnie);
         void UpdateEmplouerFirstName(string FirstName);

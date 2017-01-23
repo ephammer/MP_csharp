@@ -20,9 +20,28 @@ namespace WpfApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static BL.IBL bl;
+
         public MainWindow()
         {
             InitializeComponent();
+            bl = FactoryBL.getBL();
+        }
+        
+        private void Employer_Button_Click(object sender, RoutedEventArgs e)
+        {
+            new EmployerWindow().Show();
+        }
+
+        private void Employee_Button_Click(object sender, RoutedEventArgs e)
+        {
+            new EmployeeWindow().Show();
+
+        }
+
+        private void Contract_Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
