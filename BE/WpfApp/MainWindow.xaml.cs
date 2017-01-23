@@ -25,7 +25,7 @@ namespace WpfApp
         public MainWindow()
         {
             InitializeComponent();
-            bl = FactoryBL.getBL();
+            bl = FactoryBL.GetBL();
         }
         
         private void Employer_Button_Click(object sender, RoutedEventArgs e)

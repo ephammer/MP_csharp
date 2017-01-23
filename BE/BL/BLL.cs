@@ -57,7 +57,7 @@ namespace BL
             }
         }
 
-        public string printListEmployer()
+        public string PrintListEmployer()
         {
             string allEmployer = null;
             for (int i = 0; i < ListEmployer.Count; i++)
@@ -65,7 +65,7 @@ namespace BL
             return allEmployer;
         }
 
-        public string printListEmployee()
+        public string PrintListEmployee()
         {
             string allEmployee = null;
             for (int i = 0; i < ListEmployees.Count; i++)
@@ -73,7 +73,7 @@ namespace BL
             return allEmployee;
         }
 
-        public string printListContracts()
+        public string PrintListContracts()
         {
             string allContracts = null;
             for (int i = 0; i < ListContract.Count; i++)
@@ -124,7 +124,7 @@ namespace BL
 
         public void AddEmployee(Employee employee)
         {
-            if(calculateAge(employee.Birthday)>=18)
+            if(CalculateAge(employee.Birthday)>=18)
             {
                 dataSource.AddEmployee(employee);
             }
@@ -170,7 +170,7 @@ namespace BL
             dataSource.RemoveSpecialization(specialisation);
         }
 
-        private int calculateAge(DateTime birthday)
+        private int CalculateAge(DateTime birthday)
         {
             int now = int.Parse(DateTime.Now.ToString("yyyyMMdd"));
             int intBirthday = int.Parse(birthday.ToString("yyyyMMdd"));
@@ -188,12 +188,12 @@ namespace BL
 
         }
 
-        public bool findAllInterview(Contract contract)
+        public bool FindAllInterview(Contract contract)
         {
             return contract.Interview;
         }
 
-        public bool findAllContractSignature(Contract contract)
+        public bool FindAllContractSignature(Contract contract)
         {
             return contract.ContractSignature;
 
@@ -206,7 +206,7 @@ namespace BL
             return count.Count<Contract>();
         }
 
-        public List<Employee> groupEmployersBySpecialization(bool order = false)
+        public List<Employee> GroupEmployersBySpecialization(bool order = false)
         {
            
             if (order)
@@ -227,7 +227,7 @@ namespace BL
             }
         }
 
-        public List<Employee> groupEmployersByAdress(bool order = false)
+        public List<Employee> GroupEmployersByAdress(bool order = false)
         {
 
             if (order)
@@ -250,7 +250,7 @@ namespace BL
         }
 
         // TODO: Not working, needs fix
-        public List<Employee> groupEmployersByProfit(bool order = false)
+        public List<Employee> GroupEmployersByProfit(bool order = false)
         {
 
             if (order)

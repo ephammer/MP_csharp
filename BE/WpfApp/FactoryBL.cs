@@ -9,7 +9,7 @@ namespace WpfApp
 {
     public class FactoryBL
     {
-        public static IBL getBL()
+        public static IBL GetBL()
         {
             IBL ibl = new BLL();
 

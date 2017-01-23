@@ -28,7 +28,7 @@
         <Label Content="ID:"/>
         <TextBox Grid.Row="0" Grid.Column="1" Height="auto" Width="auto" MinWidth="40" Name="id" />
         <Label Content="Does the Employer have a company?" Grid.Row="2"/>
-        <CheckBox Grid.Column="1" Grid.Row="2" Name="compagny"  Checked="compagny_Checked" Unchecked="compagny_Unchecked"/>
+        <CheckBox Grid.Column="1" Grid.Row="2" Name="compagny"  Checked="Compagny_Checked" Unchecked="Compagny_Unchecked"/>
         <Label Content="First name:" Grid.Row="1" />
         <TextBox Grid.Row="1" Grid.Column="1" Height="auto" Width="auto" MinWidth="60" Name="firstName" />
         <Label Content="Name of the compagnie:" Grid.Row="3" Visibility="Collapsed" Name="CompagnyNameLabel" />

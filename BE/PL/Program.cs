@@ -30,17 +30,17 @@ namespace PL
 
                     case 1: AddEmployer();
                         Console.WriteLine("Your added a new Employer\n");
-                        Console.WriteLine(bll.printListEmployer());
+                        Console.WriteLine(bll.PrintListEmployer());
                         break;
 
                     case 2: AddEmployee();
                         Console.WriteLine("Your added a new Employee\n");
-                        Console.WriteLine(bll.printListEmployee());
+                        Console.WriteLine(bll.PrintListEmployee());
                         break;
 
                     case 3: AddContract();
                         Console.WriteLine("You added a new Contract");
-                        Console.WriteLine(bll.printListContracts());
+                        Console.WriteLine(bll.PrintListContracts());
                         break;
 
                     default: return;

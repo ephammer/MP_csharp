@@ -22,7 +22,7 @@ namespace BL
         void AddEmployer(Employer employer);
         void RemoveEmployer(Employer employer);
         void UpdatedEmployer(Employer UpdatedEmployer);
-        string printListEmployer();
+        string PrintListEmployer();
         /*
         void UpdateEmployerCompagnie(bool Compagnie);
         void UpdateEmplouerFirstName(string FirstName);
@@ -36,7 +36,7 @@ namespace BL
         void AddEmployee(Employee employee);
         void RemoverEmployee(Employee employee);
         void UpdateEnployee(Employee UpdatedEmployee);
-
+        string PrintListEmployee();
         /*
         void UpdateEmployeeFirstName(string FirstName);
         void UpdateEmployeeLastName(string LastName);

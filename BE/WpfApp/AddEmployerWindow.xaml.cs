@@ -25,12 +25,12 @@ namespace WpfApp
             this.fields.ItemsSource =Enum.GetValues(typeof(BE.Employer.NameField));
         }
 
-        private void compagny_Checked(object sender, RoutedEventArgs e)
+        private void Compagny_Checked(object sender, RoutedEventArgs e)
         {
                 CompagnyNameLabel.Visibility = Visibility.Visible;
         }
 
-        private void compagny_Unchecked(object sender, RoutedEventArgs e)
+        private void Compagny_Unchecked(object sender, RoutedEventArgs e)
         {
             CompagnyNameLabel.Visibility = Visibility.Collapsed;
         }
@@ -75,7 +75,8 @@ namespace WpfApp
                  * Finally close the addEmployerWindow
                  * */
 
-                MessageBox.Show(MainWindow.bl.printListEmployer());
+                //MessageBox.Show(MainWindow.bl.PrintListEmployer());
+                EmployerWindow.ListEmployer.Items.Refresh();
                 this.Close();
             }
             catch (Exception error)

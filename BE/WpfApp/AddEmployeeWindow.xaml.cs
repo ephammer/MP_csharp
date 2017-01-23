@@ -15,20 +15,18 @@ using System.Windows.Shapes;
 namespace WpfApp
 {
     /// <summary>
-    /// Interaction logic for EmployeeWindow.xaml
+    /// Interaction logic for AddEmployeeWindow.xaml
     /// </summary>
-    public partial class EmployeeWindow : Window
+    public partial class AddEmployeeWindow : Window
     {
-        public EmployeeWindow()
+        public AddEmployeeWindow()
         {
             InitializeComponent();
-            this.DataContext = MainWindow.bl.ListEmployer;
-
         }
 
-        private void Add_Button_Click(object sender, RoutedEventArgs e)
+        private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
-            new AddEmployeeWindow().Show();
+
         }
     }
 }
