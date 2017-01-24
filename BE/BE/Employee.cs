@@ -15,10 +15,10 @@ namespace BE
         public DateTime Birthday { get; set; }
         public int PhoneNumber { get; set; }
         public string Adress { get; set; }
-        public enum Degree { Certificate,Bachelor,Master,Phd,Student};
-        public Degree degree { get; set; }
+        public enum Degrees { Certificate,Bachelor,Master,Phd,Student};
+        public Degrees Degree { get; set; }
         public bool MilitaryService { get; set; }
-        public BankAccount bankAccount { get; set; }
+        public BankAccount Bankaccount { get; set; }
         public override string ToString()
         {
             return "First Name: " + FirstName + '\n' 
@@ -28,13 +28,13 @@ namespace BE
                 + "Specialization: " + Convert.ToString(SpecializationID) + '\n'
                 + "PhoneNumber: " + Convert.ToString(PhoneNumber) + '\n'
                 + "Adress: " + Adress + '\n'
-                + "Degree: " + Convert.ToString(degree) + '\n'
+                + "Degree: " + Convert.ToString(Degree) + '\n'
                 + "Military service: " + Convert.ToString(MilitaryService) + '\n'
-                + "BankAccount" + Convert.ToString(bankAccount);
+                + "BankAccount" + Convert.ToString(Bankaccount);
         }
 
         public Employee(int id, string firstName, string lastName, DateTime birthday, 
-            int phoneNumber, string adress, Degree degree, int specialization,
+            int phoneNumber, string adress, Degrees degree, int specialization,
             bool militaryService, BankAccount bankAccount)
         {
             Id = id;
@@ -42,10 +42,10 @@ namespace BE
             LastName = lastName;
             Birthday = birthday;
             PhoneNumber = phoneNumber;
-            this.degree = degree;
+            this.Degree = degree;
             this.SpecializationID = specialization;
             MilitaryService = militaryService;
-            this.bankAccount = bankAccount;
+            this.Bankaccount = bankAccount;
         }
     }
 }

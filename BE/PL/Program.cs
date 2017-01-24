@@ -164,7 +164,7 @@ namespace PL
                             birthday,
                             phone,
                             adress,
-                            Employee.Degree.Bachelor,
+                            Employee.Degrees.Bachelor,
                             new Specialization(
                                 sName,
                                 Specialization.NameField.DataStructure,

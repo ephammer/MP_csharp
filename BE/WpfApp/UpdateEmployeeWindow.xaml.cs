@@ -22,7 +22,7 @@ namespace WpfApp
         public UpdateEmployeeWindow(int index)
         {
             InitializeComponent();
-            this.degree.ItemsSource = Enum.GetValues(typeof(BE.Employee.Degree));
+            this.degree.ItemsSource = Enum.GetValues(typeof(BE.Employee.Degrees));
 
             BE.Employee employee = MainWindow.bl.ListEmployees[index];
             DataContext = employee;
@@ -69,7 +69,7 @@ namespace WpfApp
                         Convert.ToDateTime(Birthday.SelectedDate),
                         Convert.ToInt32(phoneNumber.Text),
                         adress.Text,
-                        (BE.Employee.Degree)degree.SelectedItem,
+                        (BE.Employee.Degrees)degree.SelectedItem,
                         Convert.ToInt32(Specialization.Text),
                         Convert.ToBoolean(military.IsChecked),
                         new BE.BankAccount(

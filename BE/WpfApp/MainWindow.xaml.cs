@@ -44,7 +44,7 @@ namespace WpfApp
 
         private void Contract_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            new ContractWindow().Show();
         }
 
         private void Specialization_Button_Click(object sender, RoutedEventArgs e)

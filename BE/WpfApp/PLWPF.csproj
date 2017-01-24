@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddContractWindow.xaml.cs">
+      <DependentUpon>AddContractWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddEmployeeWindow.xaml.cs">
       <DependentUpon>AddEmployeeWindow.xaml</DependentUpon>
     </Compile>
@@ -64,6 +67,9 @@
     </Compile>
     <Compile Include="AddSpecializationWindow.xaml.cs">
       <DependentUpon>AddSpecializationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContractWindow.xaml.cs">
+      <DependentUpon>ContractWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="EmployeeWindow.xaml.cs">
       <DependentUpon>EmployeeWindow.xaml</DependentUpon>
@@ -74,6 +80,9 @@
     <Compile Include="SpecializationWindow.xaml.cs">
       <DependentUpon>SpecializationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UpdateContractWindow.xaml.cs">
+      <DependentUpon>UpdateContractWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UpdateEmployeeWindow.xaml.cs">
       <DependentUpon>UpdateEmployeeWindow.xaml</DependentUpon>
     </Compile>
@@ -83,6 +92,10 @@
     <Compile Include="UpdateSpecializationWindow.xaml.cs">
       <DependentUpon>UpdateSpecializationWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AddContractWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +105,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddSpecializationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContractWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -117,6 +134,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SpecializationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateContractWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

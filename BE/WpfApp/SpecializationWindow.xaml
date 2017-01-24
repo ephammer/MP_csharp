@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="SpecializationWindow" Height="300" Width="300">
+        Title="SpecializationWindow" Height="300" Width="450">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80*" />

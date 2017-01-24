@@ -5,12 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="300" Width="200">
     <Grid>
-        <Button Content="Employer" HorizontalAlignment="Left" Margin="69,71,0,0" VerticalAlignment="Top" Width="100" Click="Employer_Button_Click"/>
-        <Button Content="Employee" HorizontalAlignment="Left" Margin="225,71,0,0" VerticalAlignment="Top" Width="100" Click="Employee_Button_Click"/>
-        <Button Content="Contract" HorizontalAlignment="Left" Margin="370,71,0,0" VerticalAlignment="Top" Width="100" Click="Contract_Button_Click"/>
-        <Button Content="Spoecialization" HorizontalAlignment="Left" Margin="250,114,0,0" VerticalAlignment="Top" Width="100" Click="Specialization_Button_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="25*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Content="Employer" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100" Click="Employer_Button_Click"/>
+        <Button Grid.Row="1" Content="Employee" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="Employee_Button_Click"/>
+        <Button Grid.Row="2" Content="Contract" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100" Click="Contract_Button_Click"/>
+        <Button Grid.Row="3" Content="Specialization" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100" Click="Specialization_Button_Click"/>
 
     </Grid>
 </Window>

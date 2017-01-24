@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="Employer" Height="300" Width="300">
+        Title="Employer" Height="300" Width="650">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80*" />
@@ -18,22 +18,22 @@
         </Grid.RowDefinitions>
         <Button 
             Content="Add" 
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
             Width="50" 
             Click="Add_Button_Click"
             Grid.Column="1" Margin="0,0,0,5"/>
         <Button 
             Content="Remove"
-            HorizontalAlignment="Right" 
-            VerticalAlignment="Top" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
             Width="50"
             Grid.Column="1"
             Grid.Row="1" Margin="0,0,0,5" Click="Remove_Button_Click"/>
         <Button
             Content="Update"
-            HorizontalAlignment="Right" 
-            VerticalAlignment="Top"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
             Width="50" 
             Grid.Row="2"
             Grid.Column="1" Margin="0,0,0,0" Click="Update_Button_Click"/>
