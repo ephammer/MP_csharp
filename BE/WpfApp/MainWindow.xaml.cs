@@ -35,13 +35,21 @@ namespace WpfApp
 
         private void Employee_Button_Click(object sender, RoutedEventArgs e)
         {
-            new EmployeeWindow().Show();
+            if (bl.ListSpecialzation.Count!=0)
+                new EmployeeWindow().Show();
+            else
+                MessageBox.Show("Please create specialization first");
 
         }
 
         private void Contract_Button_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Specialization_Button_Click(object sender, RoutedEventArgs e)
+        {
+            new SpecializationWindow().Show();
         }
     }
 }

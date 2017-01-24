@@ -62,20 +62,36 @@
     <Compile Include="AddEmployerWindow.xaml.cs">
       <DependentUpon>AddEmployerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddSpecializationWindow.xaml.cs">
+      <DependentUpon>AddSpecializationWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EmployeeWindow.xaml.cs">
       <DependentUpon>EmployeeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="EmployerWindow.xaml.cs">
       <DependentUpon>EmployerWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SpecializationWindow.xaml.cs">
+      <DependentUpon>SpecializationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateEmployeeWindow.xaml.cs">
+      <DependentUpon>UpdateEmployeeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UpdateEmployer.xaml.cs">
       <DependentUpon>UpdateEmployer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateSpecializationWindow.xaml.cs">
+      <DependentUpon>UpdateSpecializationWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="AddEmployeeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddEmployerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddSpecializationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -100,7 +116,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SpecializationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateEmployeeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UpdateEmployer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateSpecializationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

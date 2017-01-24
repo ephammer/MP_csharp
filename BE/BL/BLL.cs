@@ -127,24 +127,23 @@ namespace BL
             bool added = false;
             if (CalculateAge(employee.Birthday) >= 18)
             {
-                dataSource.AddEmployee(employee);
-                added = false;
+
+                for (int i = 0; i < ListSpecialzation.Count; i++)
+                {
+                    if (employee.SpecializationID == ListSpecialzation[i].SpecializationID)
+                    {
+                        dataSource.AddEmployee(employee);
+                        added = true;
+                        break;
+                    }
+                }
+                if (added == false)
+                    throw new Exception("The specializationID is incorrect");
             }
             else
             {
                 throw new Exception("The employee must be at least 18");
             }
-            for (int i = 0; i < ListSpecialzation.Count; i++)
-            {
-                if (employee.SpecializationID == ListSpecialzation[i].SpecializationID)
-                {
-                    dataSource.AddEmployee(employee);
-                    added = true;
-                    break;
-                }
-            }
-            if(added==false)
-                throw new Exception("The specializationID is incorrect");
         }
             public void AddEmployer(Employer employer)
         {

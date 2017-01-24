@@ -1,11 +1,11 @@
-﻿<Window x:Class="WpfApp.AddEmployeeWindow"
+﻿<Window x:Class="WpfApp.UpdateEmployeeWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="AddEmployeeWindow" Height="500" Width="300">
+        Title="UpdateEmployee" Height="500" Width="300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="90*"/>
@@ -41,52 +41,53 @@
             <TextBox Grid.Row="0" Grid.Column="1" Height="auto" Width="auto" MinWidth="40" Name="id" />
 
             <Label Content="First name:" Grid.Row="1" />
-            <TextBox Grid.Row="1" Grid.Column="1" Height="auto" Width="auto" MinWidth="60" Name="FirstName" />
+            <TextBox Grid.Row="1" Grid.Column="1" Height="auto" Width="auto" MinWidth="60" Name="FirstName" Text="{Binding Id}"/>
 
             <Label Content="Last name:" Grid.Row="2" />
-            <TextBox Grid.Row="2" Grid.Column="1" Height="auto" Width="auto" MinWidth="60" Name="LastName" />
+            <TextBox Grid.Row="2" Grid.Column="1" Height="auto" Width="auto" MinWidth="60" Name="LastName" Text="{Binding FirstName}"/>
 
             <Label Content="Birthday:" Grid.Row="3"/>
-            <DatePicker Grid.Row="3" Grid.Column="1" Name="Birthday"/>
+            <DatePicker Grid.Row="3" Grid.Column="1" Name="Birthday" SelectedDate="{Binding Birthday}"/>
 
             <Label Content="Phone number:" Grid.Row="5" Grid.Column="0"/>
-            <TextBox Grid.Row="5" Grid.Column="1" Name="phoneNumber" />
+            <TextBox Grid.Row="5" Grid.Column="1" Name="phoneNumber" Text="{Binding PhoneNumber}"/>
 
             <Label Content="Adress:" Grid.Row="6" Grid.Column="0"/>
-            <TextBox Grid.Row="6" Grid.Column="1" Name="adress" />
+            <TextBox Grid.Row="6" Grid.Column="1" Name="adress" Text="{Binding Adress}" />
 
             <Label Content="Degree:" Grid.Row="7" Grid.Column="0"/>
-            <ComboBox Grid.Column="1" Grid.Row="7" Name="degree" />
+            <ComboBox Grid.Column="1" Grid.Row="7" Name="degree" SelectedItem="{Binding degree}"/>
 
             <Label Content="Military Service:" Grid.Row="8" Grid.Column="0"/>
             <CheckBox
                 Grid.Row="8"
                 Grid.Column="1"
-                Name="military" />
+                Name="military"
+                IsChecked="{Binding MilitaryService}"/>
 
             <Label Content="Specialization ID:" Grid.Row="9"/>
-            <TextBox Grid.Row="9" Grid.Column="1" Name="Specialization"/>
-            
-            
+            <TextBox Grid.Row="9" Grid.Column="1" Name="Specialization" Text="{Binding SpecializationID}"/>
+
+
             <Label Grid.Row="10" Grid.ColumnSpan="2" Content="Bank Information" Margin="35,0,-35,0" />
 
             <Label Grid.Row="11" Content="Bank Number:"/>
-            <TextBox Grid.Row="11" Grid.Column="1" Name="BankNumber"/>
+            <TextBox Grid.Row="11" Grid.Column="1" Name="BankNumber" Text="{Binding bankAccount.BankNumber}"/>
 
             <Label Grid.Row="12" Content="Name of Bank:"/>
-            <TextBox Grid.Row="12" Grid.Column="1" Name="NameBank"/>
+            <TextBox Grid.Row="12" Grid.Column="1" Name="NameBank" Text="{Binding bankAccount.NameBank}"/>
 
             <Label Grid.Row="13" Content="Branch adress:"/>
-            <TextBox Grid.Row="13" Grid.Column="1" Name="BranchAdress"/>
+            <TextBox Grid.Row="13" Grid.Column="1" Name="BranchAdress" Text="{Binding bankAccount.BranchAdress}"/>
 
             <Label Grid.Row="14" Content="Branch city:"/>
-            <TextBox Grid.Row="14" Grid.Column="1" Name="BranchCity"/>
+            <TextBox Grid.Row="14" Grid.Column="1" Name="BranchCity" Text="{Binding bankAccount.BranchCity}"/>
 
             <Label Grid.Row="15" Content="Account number:"/>
-            <TextBox Grid.Row="15" Grid.Column="1" Name="AccountNumber"/>
+            <TextBox Grid.Row="15" Grid.Column="1" Name="AccountNumber" Text="{Binding bankAccount.AccountNumber}"/>
 
             <Label Grid.Row="16" Content="Branch number:"/>
-            <TextBox Grid.Row="16" Grid.Column="1" Name="BranchNumber"/>
+            <TextBox Grid.Row="16" Grid.Column="1" Name="BranchNumber" Text="{Binding bankAccount.BranchNumber}"/>
         </Grid>
         <Button Width="40" 
                 Height="20"

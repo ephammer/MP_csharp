@@ -49,6 +49,7 @@ namespace WpfApp
             {
                 MainWindow.bl.RemoverEmployee((BE.Employee)ListEmployees.SelectedItem);
                 ListEmployees.UpdateLayout();
+                ListEmployees.Items.Refresh();
             }
             else
                 MessageBox.Show("Please select item to delete");
@@ -56,7 +57,10 @@ namespace WpfApp
 
         private void Update_Button_Click(object sender, RoutedEventArgs e)
         {
-            //new UpdateEmployee(ListEmployees.SelectedIndex).Show();
+            if (ListEmployees.SelectedIndex != -1)
+                new UpdateEmployeeWindow(ListEmployees.SelectedIndex).Show();
+            else
+                MessageBox.Show("Please select employee to Update");
         }
     }
 }

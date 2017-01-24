@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 namespace WpfApp
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for EmployerWindow.xaml
     /// </summary>
     public partial class EmployerWindow : Window
     {
@@ -49,6 +49,7 @@ namespace WpfApp
             {
                 MainWindow.bl.RemoveEmployer((BE.Employer)ListEmployers.SelectedItem);
                 ListEmployers.UpdateLayout();
+                ListEmployers.Items.Refresh();
             }
             else
                 MessageBox.Show("Please select item to delete");
@@ -56,7 +57,10 @@ namespace WpfApp
 
         private void Update_Button_Click(object sender, RoutedEventArgs e)
         {
-            new UpdateEmployer(ListEmployers.SelectedIndex).Show();
+            if (ListEmployers.SelectedIndex != -1)
+                new UpdateEmployer(ListEmployers.SelectedIndex).Show();
+            else
+                MessageBox.Show("Please select employer to update");
         }
     }
 }

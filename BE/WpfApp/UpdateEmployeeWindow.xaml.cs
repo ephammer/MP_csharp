@@ -15,15 +15,17 @@ using System.Windows.Shapes;
 namespace WpfApp
 {
     /// <summary>
-    /// Interaction logic for AddEmployeeWindow.xaml
+    /// Interaction logic for UpdateEmployeeWindow.xaml
     /// </summary>
-    public partial class AddEmployeeWindow : Window
+    public partial class UpdateEmployeeWindow : Window
     {
-        public AddEmployeeWindow()
+        public UpdateEmployeeWindow(int index)
         {
             InitializeComponent();
             this.degree.ItemsSource = Enum.GetValues(typeof(BE.Employee.Degree));
 
+            BE.Employee employee = MainWindow.bl.ListEmployees[index];
+            DataContext = employee;
         }
 
         private void Save_Button_Click(object sender, RoutedEventArgs e)
@@ -54,12 +56,12 @@ namespace WpfApp
                     throw new Exception("Please enter valid account number");
                 if (degree.SelectedIndex == -1)
                     throw new Exception("Please choose a degree");
-                if (Birthday.SelectedDate==null)
+                if (Birthday.SelectedDate == null)
                     throw new Exception("Please enter valid bithday");
                 if (string.IsNullOrWhiteSpace(BranchNumber.Text))
                     throw new Exception("Please enter valid Branch number");
 
-                MainWindow.bl.AddEmployee(
+                MainWindow.bl.UpdateEnployee(
                     new BE.Employee(
                         Convert.ToInt32(id.Text),
                         FirstName.Text,
@@ -83,7 +85,8 @@ namespace WpfApp
                 EmployeeWindow.ListEmployee.Items.Refresh();
                 this.Close();
 
-            }catch (Exception error)
+            }
+            catch (Exception error)
             {
                 MessageBox.Show(error.Message);
             }

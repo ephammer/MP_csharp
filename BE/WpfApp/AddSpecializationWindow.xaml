@@ -1,0 +1,47 @@
+﻿<Window x:Class="WpfApp.AddSpecializationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="Add Specialization" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Content="Name:" />
+            <TextBox Grid.Row="0" Grid.Column="1" Name="Name" MinWidth="50"/>
+
+            <Label Grid.Row="1" Content="Specialization ID:"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Name="SpecializationID" MinWidth="50"/>
+
+            <Label Grid.Row="2" Content="Field:"/>
+            <ComboBox Grid.Row="2" Grid.Column="1" Name="field"/>
+
+            <Label Grid.Row="3" Content="Minimum hours:"/>
+            <TextBox Grid.Row="3" Grid.Column="1" MinWidth="50" Name="MinHours"/>
+
+            <Label Grid.Row="4" Content="Maximum hours:"/>
+            <TextBox Grid.Row="4" Grid.Column="1" Name="MaxHours"/>
+        </Grid>
+        <Button Content="Save" Grid.Row="1" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="75" Click="Save_Button_Click"/>
+
+
+    </Grid>
+</Window>
