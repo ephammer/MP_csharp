@@ -8,14 +8,14 @@ namespace BE
 {
     public class Specialization
     {
-        private int scpecializationID;
+        private int specializationID;
         private string name;
         private int minHours;
         private int maxHours;
 
         public enum NameField { DataStructure, Networks, Security, MobileDevelopment };
         public NameField Field { get; set; }
-        public int SpecializationID { get { return scpecializationID; } set { scpecializationID = value; } }
+        public int SpecializationID { get { return specializationID; } set { specializationID = value; } }
         public string Name { get { return name; } set { name = value; } }
         public int MinHours { get { return minHours; } set { minHours = value; } }
         public int MaxHours { get { return maxHours; } set{ maxHours = value; } }
@@ -37,6 +37,11 @@ namespace BE
             SpecializationID = iDSpecialization;
             MinHours = minHours;
             MaxHours = maxHours;
+        }
+
+        public Specialization()
+        {
+
         }
 
     }

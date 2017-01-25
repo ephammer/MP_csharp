@@ -9,7 +9,7 @@ namespace BE
     public class Employer
     {
         public int Id { get; set; }
-        public bool Compagnie { get; set; }
+        public bool Compagny { get; set; }
         public string FirstName { get; set; }
         public string CompagnieName { get; set; }
         public int PhoneNumber { get; set; }
@@ -22,7 +22,7 @@ namespace BE
             string employer = null;
             employer += "ID: " + Id + '\n';
             employer += "First name: " + FirstName + '\n';
-            if (Compagnie)
+            if (Compagny)
                 employer += "Compagnie: " + CompagnieName + '\n';
             employer += "Phone number: " + PhoneNumber + '\n'
                 + "Adress: " + Adress + '\n'
@@ -31,11 +31,16 @@ namespace BE
             return employer;
         }
 
+        public Employer()
+        {
+
+        }
+
         public Employer(int id, bool compagnie, string firstName, string compagnieName,
             int phoneNumber, string adress, NameField field, DateTime dateCreation)
         {
             Id = id;
-            Compagnie = compagnie;
+            Compagny = compagnie;
             FirstName = firstName;
             CompagnieName = compagnieName;
             PhoneNumber = phoneNumber;

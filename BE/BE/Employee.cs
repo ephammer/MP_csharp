@@ -33,6 +33,10 @@ namespace BE
                 + "BankAccount" + Convert.ToString(Bankaccount);
         }
 
+        public Employee()
+        {
+
+        }
         public Employee(int id, string firstName, string lastName, DateTime birthday, 
             int phoneNumber, string adress, Degrees degree, int specialization,
             bool militaryService, BankAccount bankAccount)

@@ -47,6 +47,10 @@ namespace BE
             return contract;
         }
 
+        public Contract()
+        {
+
+        }
         public Contract(int contarctID, int emplyerID, int employeeID, bool interview, bool signature,
             int hourlyWageBrute, int hourlyWageNet, DateTime startContract, DateTime endContract)
         {
