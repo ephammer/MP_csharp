@@ -35,7 +35,7 @@ namespace WpfApp
 
         private void Employee_Button_Click(object sender, RoutedEventArgs e)
         {
-            if (bl.ListSpecialzation.Count!=0)
+            if (bl.ListSpecialzation!=null)
                 new EmployeeWindow().Show();
             else
                 MessageBox.Show("Please create specialization first");

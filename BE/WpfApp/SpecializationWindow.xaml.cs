@@ -48,6 +48,7 @@ namespace WpfApp
             if (ListSpecialization.SelectedIndex != -1)
             {
                 MainWindow.bl.RemoveSpecialization((BE.Specialization)ListSpecialization.SelectedItem);
+                ListSpecialization.ItemsSource = MainWindow.bl.ListSpecialzation;
                 ListSpecialization.UpdateLayout();
                 ListSpecialization.Items.Refresh();
             }

@@ -48,6 +48,7 @@ namespace WpfApp
             if (ListEmployees.SelectedIndex != -1)
             {
                 MainWindow.bl.RemoverEmployee((BE.Employee)ListEmployees.SelectedItem);
+                ListEmployees.ItemsSource = MainWindow.bl.ListEmployees;
                 ListEmployees.UpdateLayout();
                 ListEmployees.Items.Refresh();
             }

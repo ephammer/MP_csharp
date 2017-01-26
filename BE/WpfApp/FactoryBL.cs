@@ -11,7 +11,7 @@ namespace WpfApp
     {
         public static IBL GetBL()
         {
-            IBL ibl = new BLL();
+            IBL ibl = new BLL_XML();
 
             return ibl;
         }

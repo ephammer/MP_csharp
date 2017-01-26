@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<employees>
+  <employee>
+    <id>23</id>
+    <firstName>Ephraim</firstName>
+    <lastName>Hammer</lastName>
+    <birthday>1993-11-23T00:00:00</birthday>
+    <degree>Master</degree>
+    <adress>Jerusalem</adress>
+    <military>false</military>
+    <phoneNumber>823</phoneNumber>
+    <BankAccount>
+      <AccountNumber>23</AccountNumber>
+      <BankNumber>23</BankNumber>
+      <BranchNumber>23</BranchNumber>
+      <BranchAdress>Rehavia</BranchAdress>
+      <BranchCity>Jerusalem</BranchCity>
+      <NameBank>Leumi</NameBank>
+    </BankAccount>
+  </employee>
+</employees>

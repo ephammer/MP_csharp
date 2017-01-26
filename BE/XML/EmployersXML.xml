@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<employers>
+  <employer>
+    <id>34</id>
+    <firstName>sdfbv</firstName>
+    <field>Security</field>
+    <compagny>false</compagny>
+    <compagnyName></compagnyName>
+    <adress>345</adress>
+    <phoneNumber>345</phoneNumber>
+    <dateCreation>2017-01-25T21:55:18.3332742+02:00</dateCreation>
+  </employer>
+  <employer>
+    <id>32</id>
+    <firstName>fw</firstName>
+    <field>Networks</field>
+    <compagny>false</compagny>
+    <compagnyName></compagnyName>
+    <adress>34</adress>
+    <phoneNumber>34</phoneNumber>
+    <dateCreation>2017-01-26T14:14:31.6346681+02:00</dateCreation>
+  </employer>
+  <employer>
+    <id>24</id>
+    <firstName>fsdv</firstName>
+    <field>Networks</field>
+    <compagny>true</compagny>
+    <compagnyName>vdfs</compagnyName>
+    <adress>25</adress>
+    <phoneNumber>25</phoneNumber>
+    <dateCreation>2017-01-26T14:56:24.7107686+02:00</dateCreation>
+  </employer>
+  <employer>
+    <id>54336</id>
+    <firstName>fsvdv</firstName>
+    <field>Security</field>
+    <compagny>false</compagny>
+    <compagnyName></compagnyName>
+    <adress>543</adress>
+    <phoneNumber>543</phoneNumber>
+    <dateCreation>2017-01-26T15:01:46.4039278+02:00</dateCreation>
+  </employer>
+</employers>

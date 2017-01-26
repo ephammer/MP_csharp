@@ -46,6 +46,7 @@ namespace BE
             LastName = lastName;
             Birthday = birthday;
             PhoneNumber = phoneNumber;
+            Adress = adress;
             this.Degree = degree;
             this.SpecializationID = specialization;
             MilitaryService = militaryService;

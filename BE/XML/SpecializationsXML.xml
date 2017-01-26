@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<specializations>
+  <specialization>
+    <id>0</id>
+    <name>dasc</name>
+    <field>Networks</field>
+    <minHours>234</minHours>
+    <maxHours>23442</maxHours>
+  </specialization>
+</specializations>

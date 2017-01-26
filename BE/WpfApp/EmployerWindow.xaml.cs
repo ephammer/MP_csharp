@@ -40,7 +40,14 @@ namespace WpfApp
         private void ListEmployers_Loaded(object sender, RoutedEventArgs e)
         {
             var grid = sender as DataGrid;
-            grid.ItemsSource = MainWindow.bl.ListEmployer;
+            try
+            {
+                grid.ItemsSource = MainWindow.bl.ListEmployer;
+            }
+            catch(Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
         }
 
         private void Remove_Button_Click(object sender, RoutedEventArgs e)
@@ -48,6 +55,7 @@ namespace WpfApp
             if (ListEmployers.SelectedIndex != -1)
             {
                 MainWindow.bl.RemoveEmployer((BE.Employer)ListEmployers.SelectedItem);
+                ListEmployers.ItemsSource = MainWindow.bl.ListEmployer;
                 ListEmployers.UpdateLayout();
                 ListEmployers.Items.Refresh();
             }

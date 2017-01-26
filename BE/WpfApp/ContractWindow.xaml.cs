@@ -48,6 +48,7 @@ namespace WpfApp
             if (ListContract.SelectedIndex != -1)
             {
                 MainWindow.bl.RemoveContract((BE.Contract)ListContract.SelectedItem);
+                ListContract.ItemsSource = MainWindow.bl.ListContract;
                 ListContract.UpdateLayout();
                 ListContract.Items.Refresh();
             }

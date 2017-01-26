@@ -10,7 +10,7 @@ using BE;
 
 namespace DAL
 {
-    class Dal_xml_imp:Idal
+    public class Dal_xml_imp:Idal
     {
         /*
         XElement configsRoot;
@@ -47,32 +47,6 @@ namespace DAL
             // Generating XML Files
             // ---------------------------------------------------
 
-            /*
-            // Configuration File
-            if (!File.Exists(configsPath))
-            {
-                // We config the auto-increment indexes
-                configsRoot = new XElement("autoincrements");
-                XElement numberRenting = new XElement("numberRenting", 0);
-                XElement numberClient = new XElement("numberClient", 0);
-                XElement numberCar = new XElement("numberCar", 0);
-                XElement numberFault = new XElement("numberFault", 0);
-                XElement numberCarFault = new XElement("numberCarFault", 0);
-
-                configsRoot.Add(new XElement("autoincrement", numberRenting, numberClient, numberCar, numberFault, numberCarFault));
-                configsRoot.Save(configsPath);
-            }
-            try { configsRoot = XElement.Load(configsPath); }
-            catch { throw new Exception("Failed to load " + configsPath); }
-
-            // updating class static auto-increments
-            Renting.autoIncrement = getNumberOf("Renting");
-            Client.autoIncrement = getNumberOf("Client");
-            Car.autoIncrement = getNumberOf("Car");
-            Fault.autoIncrement = getNumberOf("Fault");
-            Car_Fault.autoIncrement = getNumberOf("CarFault");
-            */
-
             // Employer File
             if (!File.Exists(employersPath))
                 MakeFile("employers", employersPath, employersRoot);
@@ -96,10 +70,9 @@ namespace DAL
 
             // Contracts File
             if (!File.Exists(contractsPath))
-                MakeFile("faults", contractsPath, contractsRoot);
+                MakeFile("contracts", contractsPath, contractsRoot);
             try { contractsRoot = XElement.Load(contractsPath); }
             catch { throw new Exception("Failed to load " + contractsPath); }
-
 
         }
 
@@ -131,7 +104,7 @@ namespace DAL
                 
                 try
                 {
-                    specializations = (from p in specializationsRoot.Elements()
+                    specializations = (from p in specializationsRoot.Elements("specialization")
                                 select new Specialization()
                                 {
                                     Name = p.Element("name").Value,
@@ -165,26 +138,25 @@ namespace DAL
 
                 try
                 {
-                    employees = (from p in employeesRoot.Elements()
+                    employees = (from p in employeesRoot.Elements("employee")
                                  select new Employee()
                                  {
                                      Id = Convert.ToInt32(p.Element("id").Value),
-                                     FirstName = p.Element("firstname").Value,
-                                     LastName = p.Element("lastname").Value,
-                                     Birthday = Convert.ToDateTime(p.Element("brithday").Value),
+                                     FirstName = p.Element("firstName").Value,
+                                     LastName = p.Element("lastName").Value,
+                                     Birthday = Convert.ToDateTime(p.Element("birthday").Value),
                                      Degree = (Employee.Degrees)Enum.Parse(typeof(Employee.Degrees), p.Element("degree").Value),
                                      MilitaryService = Convert.ToBoolean(p.Element("military").Value),
                                      Adress = p.Element("adress").Value,
                                      PhoneNumber = Convert.ToInt32(p.Element("phoneNumber").Value),
-                                     Bankaccount = new BankAccount()
-                                     {
-                                         AccountNumber = Convert.ToInt32(p.Element("BankAccount").Element("AccountNumber").Value),
-                                         BankNumber = Convert.ToInt32(p.Element("BankAccount").Element("BankNumber").Value),
-                                         BranchNumber = Convert.ToInt32(p.Element("BankAccount").Element("BranchNumber").Value),
-                                         BranchAdress = p.Element("BankAccount").Element("BranchAdress").Value,
-                                         BranchCity = p.Element("BankAccount").Element("BranchCity").Value,
-                                         NameBank = p.Element("BankAccount").Element("NameBank").Value
-                                     }
+                                     Bankaccount = new BankAccount(
+                                         Convert.ToInt32(p.Element("BankAccount").Element("BankNumber").Value),
+                                         p.Element("BankAccount").Element("NameBank").Value,
+                                         Convert.ToInt32(p.Element("BankAccount").Element("BranchNumber").Value),
+                                         p.Element("BankAccount").Element("BranchAdress").Value,
+                                         p.Element("BankAccount").Element("BranchCity").Value,
+                                         Convert.ToInt32(p.Element("BankAccount").Element("AccountNumber").Value)
+                                         )
                                  }).ToList();
                 }
                 catch
@@ -208,26 +180,65 @@ namespace DAL
                 LoadData(employersRoot, employersPath);
                 List<Employer> employers;
 
+               /*
+                foreach (var employer in employersRoot.Elements("employer"))
+                {
+                    int id = Convert.ToInt32(employer.Element("id").Value);
+                    bool compagny = Convert.ToBoolean(employer.Element("compagny").Value);
+                    string copagnyname = employer.Element("compagnyName").Value;
+                    string firstname = employer.Element("firstName").Value;
+                    int phonename = Convert.ToInt32(employer.Element("phoneNumber").Value);
+                    string adress = employer.Element("adress").Value;
+                    Employer.NameField field = (Employer.NameField)Enum.Parse(typeof(Employer.NameField), employer.Element("field").Value);
+                    DateTime date = Convert.ToDateTime(employer.Element("dateCreation").Value);
+
+                    employers.Add(new Employer(id,
+                                    compagny,
+                                    firstname,
+                                    copagnyname,
+                                    phonename,
+                                    adress,
+                                    field,
+                                    date));
+
+                }
+                */
+                
                 try
                 {
-                    employers = (from p in employersRoot.Elements()
-                                 select new Employer()
-                                 {
-                                     Id = Convert.ToInt32(p.Element("id").Value),
-                                     FirstName = p.Element("firstname").Value,
-                                     Compagny = Convert.ToBoolean(p.Element("compagny").Value),
-                                     Field = (Employer.NameField)Enum.Parse(typeof(Employer.NameField), p.Element("field").Value),
-                                     CompagnieName = p.Element("compagnyName").Value,
-                                     Adress = p.Element("adress").Value,
-                                     PhoneNumber = Convert.ToInt32(p.Element("phoneNumber").Value),
-                                     DateCreation = Convert.ToDateTime(p.Element("dateCreation").Value)
-                                 }).ToList();
-                }
-                catch
-                {
-                    employers = null;
-                }
-                return employers;
+                employers = (from p in employersRoot.Elements("employer")
+                             select new Employer(
+                                 /*
+                                 Convert.ToInt32(p.Element("id").Value),
+                                 Convert.ToBoolean(p.Element("compagny").Value),
+                                 p.Element("firstname").Value,
+                                 p.Element("compagnyName").Value,
+                                 Convert.ToInt32(p.Element("phoneNumber").Value),
+                                 p.Element("adress").Value,
+                                 (Employer.NameField)Enum.Parse(typeof(Employer.NameField), p.Element("field").Value),
+                                 Convert.ToDateTime(p.Element("dateCreation").Value)
+                                 */
+                                 )
+                             {
+                                 Id = Convert.ToInt32(p.Element("id").Value),
+                                 FirstName = p.Element("firstName").Value,
+                                 Compagny = Convert.ToBoolean(p.Element("compagny").Value),
+                                 Field = (Employer.NameField)Enum.Parse(typeof(Employer.NameField), p.Element("field").Value),
+                                 CompagnieName = p.Element("compagnyName").Value,
+                                 Adress = p.Element("adress").Value,
+                                 PhoneNumber = Convert.ToInt32(p.Element("phoneNumber").Value),
+                                 DateCreation = Convert.ToDateTime(p.Element("dateCreation").Value)
+                             }
+
+                             ).ToList();
+            }
+            catch
+            {
+                employers = null;
+            }
+
+            
+            return employers;
 
             }
             set
@@ -247,7 +258,7 @@ namespace DAL
 
                 try
                 {
-                    contracts = (from p in contractsRoot.Elements()
+                    contracts = (from p in contractsRoot.Elements("contract")
                                        select new Contract()
                                        {
                                            ContractID = Convert.ToInt32(p.Element("id").Value),
@@ -283,7 +294,7 @@ namespace DAL
         public void AddSpecialization(Specialization specialisation)
         {
             XElement id = new XElement("id", specialisation.SpecializationID);
-            XElement name = new XElement("firstName", specialisation.Name);
+            XElement name = new XElement("name", specialisation.Name);
             XElement field = new XElement("field", specialisation.Field);
             XElement minHours = new XElement("minHours", specialisation.MinHours);
             XElement maxHours = new XElement("maxHours", specialisation.MaxHours);
@@ -297,7 +308,7 @@ namespace DAL
             XElement specializationElement;
             try
             {
-                specializationElement = (from p in specializationsRoot.Elements()
+                specializationElement = (from p in specializationsRoot.Elements("specialization")
                                   where Convert.ToInt32(p.Element("id").Value) == specialisation.SpecializationID
                                   select p).FirstOrDefault();
                 specializationElement.Remove();
@@ -311,7 +322,7 @@ namespace DAL
 
         public void UpdateSpecialization(Specialization UpdatedSpecialisation)
         {
-            XElement specializationElement = (from p in specializationsRoot.Elements()
+            XElement specializationElement = (from p in specializationsRoot.Elements("specialization")
                                        where Convert.ToInt32(p.Element("id").Value) == UpdatedSpecialisation.SpecializationID
                                        select p).FirstOrDefault();
 
@@ -343,7 +354,7 @@ namespace DAL
             XElement employerElement;
             try
             {
-                employerElement = (from p in employersRoot.Elements()
+                employerElement = (from p in employersRoot.Elements("employer")
                                          where Convert.ToInt32(p.Element("id").Value) == employer.Id
                                          select p).FirstOrDefault();
                 employerElement.Remove();
@@ -351,14 +362,14 @@ namespace DAL
             }
             catch
             {
-                throw new Exception("Error adding specialization");
+                throw new Exception("Error removing emplyer");
             }
         }
 
         public void UpdatedEmployer(Employer UpdatedEmployer)
         {
-            XElement employerElement = (from p in employersRoot.Elements()
-                                              where Convert.ToInt32(p.Element("id").Value) == UpdatedSpecialisation.SpecializationID
+            XElement employerElement = (from p in employersRoot.Elements("employer")
+                                              where Convert.ToInt32(p.Element("id").Value) == UpdatedEmployer.Id
                                               select p).FirstOrDefault();
 
             employerElement.Element("name").Value = UpdatedEmployer.FirstName;
@@ -389,7 +400,7 @@ namespace DAL
             XElement phoneNumber = new XElement("phoneNumber", employee.PhoneNumber);
             XElement accountNumber = new XElement("AccountNumber", employee.Bankaccount.AccountNumber);
             XElement bankNumber = new XElement("BankNumber", employee.Bankaccount.BankNumber);
-            XElement branchNumber = new XElement("BranchtNumber", employee.Bankaccount.BranchNumber);
+            XElement branchNumber = new XElement("BranchNumber", employee.Bankaccount.BranchNumber);
             XElement branchAdress = new XElement("BranchAdress", employee.Bankaccount.BranchAdress);
             XElement branchCity = new XElement("BranchCity", employee.Bankaccount.BranchCity);
             XElement nameBank = new XElement("NameBank", employee.Bankaccount.NameBank);
@@ -407,7 +418,7 @@ namespace DAL
             XElement employeeElement;
             try
             {
-                employeeElement = (from p in employeesRoot.Elements()
+                employeeElement = (from p in employeesRoot.Elements("employee")
                                          where Convert.ToInt32(p.Element("id").Value) == employee.Id
                                          select p).FirstOrDefault();
                 employeeElement.Remove();
@@ -415,13 +426,13 @@ namespace DAL
             }
             catch
             {
-                throw new Exception("Error adding specialization");
+                throw new Exception("Error adding employee");
             }
         }
 
         public void UpdateEnployee(Employee UpdatedEmployee)
         {
-            XElement employeeElement = (from p in specializationsRoot.Elements()
+            XElement employeeElement = (from p in specializationsRoot.Elements("employee")
                                               where Convert.ToInt32(p.Element("id").Value) == UpdatedEmployee.Id
                                               select p).FirstOrDefault();
 
@@ -463,7 +474,7 @@ namespace DAL
             XElement contractElement;
             try
             {
-                contractElement = (from p in contractsRoot.Elements()
+                contractElement = (from p in contractsRoot.Elements("contract")
                                    where Convert.ToInt32(p.Element("id").Value) == contract.ContractID
                                    select p).FirstOrDefault();
                 contractElement.Remove();
@@ -477,8 +488,8 @@ namespace DAL
 
         public void UpdateContract(Contract UpdatedContract)
         {
-            XElement contractElement = (from p in employersRoot.Elements()
-                                        where Convert.ToInt32(p.Element("id").Value) == UpdatedSpecialisation.SpecializationID
+            XElement contractElement = (from p in employersRoot.Elements("contract")
+                                        where Convert.ToInt32(p.Element("id").Value) == UpdatedContract.ContractID
                                         select p).FirstOrDefault();
 
             contractElement.Element("employerID").Value = Convert.ToString(UpdatedContract.EmployerID);
