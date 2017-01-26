@@ -69,13 +69,7 @@ namespace WpfApp
                         (BE.Employer.NameField)fields.SelectedItem,
                         DateTime.Now));
 
-                /* 
-                 * If everything is correctly entered than show 
-                 * the full list of Employer
-                 * Finally close the addEmployerWindow
-                 * */
-
-                //MessageBox.Show(MainWindow.bl.PrintListEmployer());
+                EmployerWindow.ListEmployer.ItemsSource = MainWindow.bl.ListEmployer;
                 EmployerWindow.ListEmployer.Items.Refresh();
                 this.Close();
             }

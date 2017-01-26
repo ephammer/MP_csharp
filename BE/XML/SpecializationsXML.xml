@@ -4,7 +4,7 @@
     <id>0</id>
     <name>dasc</name>
     <field>Networks</field>
-    <minHours>234</minHours>
-    <maxHours>23442</maxHours>
+    <minHours>12</minHours>
+    <maxHours>14</maxHours>
   </specialization>
 </specializations>

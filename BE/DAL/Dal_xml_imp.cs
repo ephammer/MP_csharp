@@ -178,9 +178,9 @@ namespace DAL
             get
             {
                 LoadData(employersRoot, employersPath);
-                List<Employer> employers;
+                List<Employer> employers = new List<Employer>();
 
-               /*
+               
                 foreach (var employer in employersRoot.Elements("employer"))
                 {
                     int id = Convert.ToInt32(employer.Element("id").Value);
@@ -202,7 +202,7 @@ namespace DAL
                                     date));
 
                 }
-                */
+                
                 
                 try
                 {
@@ -269,7 +269,7 @@ namespace DAL
                                            HourlyWageBrute = Convert.ToInt32(p.Element("hourlyWageBrute").Value),
                                            HourlyWageNet = Convert.ToInt32(p.Element("hourlyWageNet").Value),
                                            StartContract = Convert.ToDateTime(p.Element("startDate").Value),
-                                           EndContract = Convert.ToDateTime(p.Element("endDate").Value),
+                                           EndContract = Convert.ToDateTime(p.Element("EndDate").Value),
                                        }).ToList();
                 }
                 catch
@@ -372,19 +372,19 @@ namespace DAL
                                               where Convert.ToInt32(p.Element("id").Value) == UpdatedEmployer.Id
                                               select p).FirstOrDefault();
 
-            employerElement.Element("name").Value = UpdatedEmployer.FirstName;
+            employerElement.Element("firstName").Value = UpdatedEmployer.FirstName;
             employerElement.Element("field").Value = Convert.ToString(UpdatedEmployer.Field);
-            employerElement.Element("compagny").Value = Convert.ToString(UpdatedEmployer.CompagnieName);
+            employerElement.Element("compagny").Value = Convert.ToString(UpdatedEmployer.Compagny);
+
             if(UpdatedEmployer.Compagny)
                 employerElement.Element("compagnyName").Value = UpdatedEmployer.CompagnieName;
             else
-                employerElement.Element("compagnyName").Value = null;
+                employerElement.Element("compagnyName").Value = "";
+
             employerElement.Element("adress").Value = UpdatedEmployer.Adress;
             employerElement.Element("dateCreation").Value = Convert.ToString(UpdatedEmployer.DateCreation);
             employerElement.Element("phoneNumber").Value = Convert.ToString(UpdatedEmployer.PhoneNumber);
-
-
-
+            
             employersRoot.Save(employersPath);
         }
 
@@ -432,13 +432,13 @@ namespace DAL
 
         public void UpdateEnployee(Employee UpdatedEmployee)
         {
-            XElement employeeElement = (from p in specializationsRoot.Elements("employee")
+            XElement employeeElement = (from p in employeesRoot.Elements("employee")
                                               where Convert.ToInt32(p.Element("id").Value) == UpdatedEmployee.Id
                                               select p).FirstOrDefault();
 
-            employeeElement.Element("firstname").Value = UpdatedEmployee.FirstName;
-            employeeElement.Element("lastname").Value = UpdatedEmployee.LastName;
-            employeeElement.Element("brithday").Value = Convert.ToString(UpdatedEmployee.Birthday);
+            employeeElement.Element("firstName").Value = UpdatedEmployee.FirstName;
+            employeeElement.Element("lastName").Value = UpdatedEmployee.LastName;
+            employeeElement.Element("birthday").Value = Convert.ToString(UpdatedEmployee.Birthday);
             employeeElement.Element("degree").Value = Convert.ToString(UpdatedEmployee.Degree);
             employeeElement.Element("military").Value = Convert.ToString(UpdatedEmployee.MilitaryService);
             employeeElement.Element("adress").Value = UpdatedEmployee.Adress;
@@ -488,7 +488,7 @@ namespace DAL
 
         public void UpdateContract(Contract UpdatedContract)
         {
-            XElement contractElement = (from p in employersRoot.Elements("contract")
+            XElement contractElement = (from p in contractsRoot.Elements("contract")
                                         where Convert.ToInt32(p.Element("id").Value) == UpdatedContract.ContractID
                                         select p).FirstOrDefault();
 
@@ -499,7 +499,7 @@ namespace DAL
             contractElement.Element("hourlyWageBrute").Value = Convert.ToString(UpdatedContract.HourlyWageBrute);
             contractElement.Element("hourlyWageNet").Value = Convert.ToString(UpdatedContract.HourlyWageNet);
             contractElement.Element("startDate").Value = Convert.ToString(UpdatedContract.StartContract);
-            contractElement.Element("endDate").Value = Convert.ToString(UpdatedContract.EndContract);
+            contractElement.Element("EndDate").Value = Convert.ToString(UpdatedContract.EndContract);
 
 
 

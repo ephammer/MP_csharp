@@ -1,2 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<faults />
+<contracts>
+  <contract>
+    <id>0</id>
+    <employerID>34</employerID>
+    <employeeID>23</employeeID>
+    <interview>false</interview>
+    <contractSignature>false</contractSignature>
+    <hourlyWageBrute>23</hourlyWageBrute>
+    <hourlyWageNet>34</hourlyWageNet>
+    <startDate>1993-11-23T00:00:00</startDate>
+    <EndDate>1994-11-23T00:00:00</EndDate>
+  </contract>
+  <contract>
+    <id>34</id>
+    <employeeID>23</employeeID>
+    <employerID>34</employerID>
+    <interview>True</interview>
+    <contractSignature>False</contractSignature>
+    <hourlyWageBrute>34</hourlyWageBrute>
+    <hourlyWageNet>43</hourlyWageNet>
+    <startDate>12/01/2017 0:00:00</startDate>
+    <EndDate>19/01/2017 0:00:00</EndDate>
+  </contract>
+  <contract>
+    <id>56</id>
+    <employeeID>23</employeeID>
+    <employerID>34</employerID>
+    <interview>true</interview>
+    <contractSignature>true</contractSignature>
+    <hourlyWageBrute>34</hourlyWageBrute>
+    <hourlyWageNet>234</hourlyWageNet>
+    <startDate>2017-01-04T00:00:00</startDate>
+    <EndDate>2017-01-20T00:00:00</EndDate>
+  </contract>
+</contracts>

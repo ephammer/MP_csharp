@@ -117,7 +117,7 @@ namespace BL
             */
 
             if (indexEmployee != -1 && indexEmployer != -1)
-                dataSource.ListContract.Add(contract);
+                dataSource.AddContract(contract);
             else
                 throw new Exception("No such employer or employee");
         }

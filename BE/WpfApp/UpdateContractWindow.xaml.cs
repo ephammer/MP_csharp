@@ -58,6 +58,8 @@ namespace WpfApp
                         Convert.ToDateTime(StartContract.SelectedDate),
                         Convert.ToDateTime(EndContract.SelectedDate)
                     ));
+
+                ContractWindow.ListContracts.ItemsSource = MainWindow.bl.ListContract;
                 ContractWindow.ListContracts.Items.Refresh();
                 this.Close();
 

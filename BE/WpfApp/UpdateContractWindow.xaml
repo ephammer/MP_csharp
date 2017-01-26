@@ -29,7 +29,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Content="Contract ID:"/>
-            <TextBox Grid.Column="1" Name="ContractID" Text="{Binding ContractID}"/>
+            <TextBox Grid.Column="1" Name="ContractID" Text="{Binding ContractID}" IsEnabled="False"/>
 
             <Label Content="Employer ID:" Grid.Row="1"/>
             <TextBox Grid.Row="1" Grid.Column="1" Name="EmployerID" Text="{Binding EmployerID}"/>

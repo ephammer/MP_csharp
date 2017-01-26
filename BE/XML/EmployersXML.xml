@@ -14,11 +14,11 @@
     <id>32</id>
     <firstName>fw</firstName>
     <field>Networks</field>
-    <compagny>false</compagny>
-    <compagnyName></compagnyName>
+    <compagny>True</compagny>
+    <compagnyName>wesh</compagnyName>
     <adress>34</adress>
     <phoneNumber>34</phoneNumber>
-    <dateCreation>2017-01-26T14:14:31.6346681+02:00</dateCreation>
+    <dateCreation>26/01/2017 18:43:31</dateCreation>
   </employer>
   <employer>
     <id>24</id>
@@ -32,12 +32,32 @@
   </employer>
   <employer>
     <id>54336</id>
-    <firstName>fsvdv</firstName>
+    <firstName>Meir</firstName>
     <field>Security</field>
-    <compagny>false</compagny>
+    <compagny>False</compagny>
     <compagnyName></compagnyName>
     <adress>543</adress>
     <phoneNumber>543</phoneNumber>
-    <dateCreation>2017-01-26T15:01:46.4039278+02:00</dateCreation>
+    <dateCreation>26/01/2017 18:44:39</dateCreation>
+  </employer>
+  <employer>
+    <id>0</id>
+    <firstName>Daniel</firstName>
+    <field>Security</field>
+    <compagny>true</compagny>
+    <compagnyName>Facebook</compagnyName>
+    <adress>348723432</adress>
+    <phoneNumber>348723432</phoneNumber>
+    <dateCreation>2017-01-26T18:25:08.9580124+02:00</dateCreation>
+  </employer>
+  <employer>
+    <id>1</id>
+    <firstName>Wesh</firstName>
+    <field>Networks</field>
+    <compagny>true</compagny>
+    <compagnyName>wesh</compagnyName>
+    <adress>58</adress>
+    <phoneNumber>58</phoneNumber>
+    <dateCreation>26/01/2017 18:31:28</dateCreation>
   </employer>
 </employers>

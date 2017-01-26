@@ -36,6 +36,7 @@ namespace WpfApp
         private void Compagny_Unchecked(object sender, RoutedEventArgs e)
         {
             CompagnyNameLabel.Visibility = Visibility.Collapsed;
+            compagnyName.Text = "";
         }
 
         private void Save_Button_Click(object sender, RoutedEventArgs e)
@@ -79,6 +80,7 @@ namespace WpfApp
                  * */
 
                 //MessageBox.Show(MainWindow.bl.PrintListEmployer());
+                EmployerWindow.ListEmployer.ItemsSource = MainWindow.bl.ListEmployer;
                 EmployerWindow.ListEmployer.Items.Refresh();
                 this.Close();
             }

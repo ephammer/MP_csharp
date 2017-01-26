@@ -26,19 +26,19 @@
         </Grid.ColumnDefinitions>
 
         <Label Grid.Row="0" Content="Name:" />
-        <TextBox Grid.Row="0" Grid.Column="1" Name="Name" MinWidth="50"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Name="Name" MinWidth="50" Text="{Binding Name}"/>
 
         <Label Grid.Row="1" Content="Specialization ID:"/>
-        <TextBox Grid.Row="1" Grid.Column="1" Name="SpecializationID" MinWidth="50"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Name="SpecializationID" MinWidth="50" Text="{Binding SpecializationID}" IsEnabled="False"/>
 
         <Label Grid.Row="2" Content="Field:"/>
-        <ComboBox Grid.Row="2" Grid.Column="1" Name="field"/>
+        <ComboBox Grid.Row="2" Grid.Column="1" Name="field" SelectedItem="{Binding Field}"/>
 
         <Label Grid.Row="3" Content="Minimum hours:"/>
-        <TextBox Grid.Row="3" Grid.Column="1" MinWidth="50" Name="MinHours"/>
+        <TextBox Grid.Row="3" Grid.Column="1" MinWidth="50" Name="MinHours" Text="{Binding MinHours}"/>
 
         <Label Grid.Row="4" Content="Maximum hours:"/>
-        <TextBox Grid.Row="4" Grid.Column="1" Name="MaxHours"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Name="MaxHours" Text="{Binding MaxHours}" />
         </Grid>
         <Button Content="Save" Grid.Row="1" HorizontalAlignment="Center"  VerticalAlignment="Top" Width="75" Click="Save_Button_Click"/>
 

@@ -51,6 +51,8 @@ namespace WpfApp
                         Convert.ToInt32(MinHours.Text),
                         Convert.ToInt32(MaxHours.Text)
                     ));
+
+                SpecializationWindow.ListSpecializations.ItemsSource = MainWindow.bl.ListSpecialzation;
                 SpecializationWindow.ListSpecializations.Items.Refresh();
                 this.Close();
 

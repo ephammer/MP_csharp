@@ -82,6 +82,7 @@ namespace WpfApp
                             )
                         ));
 
+                EmployeeWindow.ListEmployee.ItemsSource = MainWindow.bl.ListEmployees;
                 EmployeeWindow.ListEmployee.Items.Refresh();
                 this.Close();
 

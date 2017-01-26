@@ -30,6 +30,8 @@ namespace WpfApp
         private void Add_Button_Click(object sender, RoutedEventArgs e)
         {
             new AddContractWindow().Show();
+            ListContract.ItemsSource = MainWindow.bl.ListContract;
+
         }
 
         private void ListEmployees_SelectionChanged(object sender, SelectionChangedEventArgs e)
