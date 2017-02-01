@@ -65,7 +65,7 @@
                 Name="military" />
 
             <Label Content="Specialization ID:" Grid.Row="9"/>
-            <TextBox Grid.Row="9" Grid.Column="1" Name="Specialization"/>
+            <ComboBox Grid.Row="9" Grid.Column="1" Name="Specialization"/>
             
             
             <Label Grid.Row="10" Grid.ColumnSpan="2" Content="Bank Information" Margin="35,0,-35,0" />

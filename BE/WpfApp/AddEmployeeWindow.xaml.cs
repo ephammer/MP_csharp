@@ -24,6 +24,10 @@ namespace WpfApp
             InitializeComponent();
             this.degree.ItemsSource = Enum.GetValues(typeof(BE.Employee.Degrees));
 
+            // Fill the SpecializationID combobox
+            Specialization.ItemsSource = MainWindow.bl.ListSpecialzation;
+            Specialization.DisplayMemberPath = "SpecializationID";
+            Specialization.SelectedValuePath = "SpecializationID";
         }
 
         private void Save_Button_Click(object sender, RoutedEventArgs e)
@@ -42,8 +46,8 @@ namespace WpfApp
                     throw new Exception("Please enter valid adress");
                 if (string.IsNullOrWhiteSpace(BankNumber.Text))
                     throw new Exception("Please enter valid bank number");
-                if (string.IsNullOrWhiteSpace(Specialization.Text))
-                    throw new Exception("Please enter valid specialization id");
+                if (Specialization.SelectedIndex==-1)
+                    throw new Exception("Please select valid specialization id");
                 if (string.IsNullOrWhiteSpace(NameBank.Text))
                     throw new Exception("Please enter valid Bank name");
                 if (string.IsNullOrWhiteSpace(BranchAdress.Text))
@@ -68,7 +72,7 @@ namespace WpfApp
                         Convert.ToInt32(phoneNumber.Text),
                         adress.Text,
                         (BE.Employee.Degrees)degree.SelectedItem,
-                        Convert.ToInt32(Specialization.Text),
+                        Convert.ToInt32(Specialization.SelectedValue),
                         Convert.ToBoolean(military.IsChecked),
                         new BE.BankAccount(
                             Convert.ToInt32(BankNumber.Text),

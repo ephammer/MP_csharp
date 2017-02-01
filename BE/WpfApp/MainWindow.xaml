@@ -8,15 +8,17 @@
         Title="MainWindow" Height="300" Width="200">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="25*"/>
-            <RowDefinition Height="25*"/>
-            <RowDefinition Height="25*"/>
-            <RowDefinition Height="25*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
         </Grid.RowDefinitions>
         <Button Grid.Row="0" Content="Employer" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100" Click="Employer_Button_Click"/>
         <Button Grid.Row="1" Content="Employee" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="Employee_Button_Click"/>
         <Button Grid.Row="2" Content="Contract" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100" Click="Contract_Button_Click"/>
         <Button Grid.Row="3" Content="Specialization" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100" Click="Specialization_Button_Click"/>
+        <Button Grid.Row="4" Content="Banks" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100" Click="Banks_Button_Click"/>
 
     </Grid>
 </Window>

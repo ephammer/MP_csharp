@@ -7,6 +7,7 @@ using System.Xml.Linq;
 using System.IO;
 using System.Reflection;
 using BE;
+using System.Net;
 
 namespace DAL
 {
@@ -28,6 +29,9 @@ namespace DAL
 
         XElement contractsRoot;
         string contractsPath;
+
+        XElement atmsRoot;
+        string atmsPath;
 
         public Dal_xml_imp()
         {
@@ -287,6 +291,64 @@ namespace DAL
                 }
             }
         }
+        public List<BankAccount> ListBankBranches
+        {
+            get
+            {
+                string str = Assembly.GetExecutingAssembly().Location;
+                string localPath = Path.GetDirectoryName(str);
+
+                for (int i = 0; i < 3; i++)
+                    localPath = Directory.GetParent(localPath).FullName;
+
+                string xmlLocalPath = localPath + @"\\XML\\atm.xml";
+                atmsPath = xmlLocalPath;
+
+                WebClient wc = new WebClient();
+                try
+                {
+                    string xmlServerPath =
+                    @"http://www.boi.org.il/en/BankingSupervision/BanksAndBranchLocations/Lists/BoiBankBranchesDocs/snifim_en.xml";
+                    wc.DownloadFile(xmlServerPath, xmlLocalPath);
+                }
+                catch (Exception)
+                {
+                    string xmlServerPath = @"http://www.jct.ac.il/~coshri/atm.xml";
+                    wc.DownloadFile(xmlServerPath, xmlLocalPath);
+                }
+                finally
+                {
+                    wc.Dispose();
+                }
+
+                atmsRoot = XElement.Load(atmsPath);
+
+                LoadData(atmsRoot, atmsPath);
+
+                List<BankAccount> bankAccounts;
+
+                try
+                {
+                    bankAccounts = (from p in atmsRoot.Elements("BRANCH")
+                                    select new BankAccount(
+                                             Convert.ToInt32(p.Element("Bank_Code").Value),
+                                             p.Element("Bank_Name").Value,
+                                             Convert.ToInt32(p.Element("Branch_Code").Value),
+                                             p.Element("Address").Value,
+                                             p.Element("City").Value,
+                                             0
+                                             )).ToList();
+
+                }
+                catch
+                {
+                    bankAccounts = null;
+                }
+
+                return bankAccounts;
+            }
+
+        }
 
 
 
@@ -506,9 +568,5 @@ namespace DAL
             contractsRoot.Save(contractsPath);
         }
 
-        public List<BankAccount> ListBankBranches()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

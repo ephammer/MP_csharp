@@ -32,10 +32,10 @@
             <TextBox Grid.Column="1" Name="ContractID"/>
 
             <Label Content="Employer ID:" Grid.Row="1"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Name="EmployerID"/>
+            <ComboBox Grid.Row="1" Grid.Column="1" Name="EmployerID"/>
 
             <Label Content="Employee ID:" Grid.Row="2"/>
-            <TextBox Grid.Row="2" Grid.Column="1" Name="EmployeeID"/>
+            <ComboBox Grid.Row="2" Grid.Column="1" Name="EmployeeID"/>
 
             <Label Content="Interview:" Grid.Row="3" />
             <CheckBox Grid.Row="3" Grid.Column="1" Name="Interview"/>

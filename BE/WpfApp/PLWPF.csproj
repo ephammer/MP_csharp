@@ -68,6 +68,9 @@
     <Compile Include="AddSpecializationWindow.xaml.cs">
       <DependentUpon>AddSpecializationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BanksWindow.xaml.cs">
+      <DependentUpon>BanksWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ContractWindow.xaml.cs">
       <DependentUpon>ContractWindow.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AddSpecializationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BanksWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

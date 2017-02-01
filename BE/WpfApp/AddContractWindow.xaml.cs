@@ -22,6 +22,16 @@ namespace WpfApp
         public AddContractWindow()
         {
             InitializeComponent();
+
+            // Fill the EmployeeID combobox
+            EmployeeID.ItemsSource = MainWindow.bl.ListEmployees;
+            EmployeeID.DisplayMemberPath = "Id";
+            EmployeeID.SelectedValuePath = "Id";
+
+            // Fill the EmployerID combobox
+            EmployerID.ItemsSource = MainWindow.bl.ListEmployer;
+            EmployerID.DisplayMemberPath = "Id";
+            EmployerID.SelectedValuePath = "Id";
         }
 
         private void Save_Button_Click(object sender, RoutedEventArgs e)
@@ -30,9 +40,9 @@ namespace WpfApp
             {
                 if (string.IsNullOrWhiteSpace(ContractID.Text))
                     throw new Exception("Please enter valid contract ID");
-                if (string.IsNullOrWhiteSpace(EmployeeID.Text))
+                if (EmployeeID.SelectedIndex==-1)
                     throw new Exception("Please enter valid employee ID");
-                if (string.IsNullOrWhiteSpace(EmployerID.Text))
+                if (EmployerID.SelectedIndex==-1)
                     throw new Exception("Please enter valid employer ID");
                 if (string.IsNullOrWhiteSpace(hourlyWageBrute.Text))
                     throw new Exception("Please enter valid number of hourly wage brute");
@@ -43,11 +53,13 @@ namespace WpfApp
                 if (EndContract.SelectedDate == null)
                     throw new Exception("Please enter a date of the end of contract");
 
+                var debug = EmployerID.SelectedValue;
+
                 MainWindow.bl.AddContract(
                     new BE.Contract(
                         Convert.ToInt32(ContractID.Text),
-                        Convert.ToInt32(EmployerID.Text),
-                        Convert.ToInt32(EmployeeID.Text),
+                        Convert.ToInt32(EmployerID.SelectedValue),
+                        Convert.ToInt32(EmployeeID.SelectedValue),
                         Convert.ToBoolean(Interview.IsChecked),
                         Convert.ToBoolean(Signature.IsChecked),
                         Convert.ToInt32(hourlyWageBrute.Text),

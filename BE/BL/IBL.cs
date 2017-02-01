@@ -67,6 +67,6 @@ namespace BL
         List<Employer> ListEmployer { get; set; }
         List<Contract> ListContract { get; set; }
 
-        List<BankAccount> ListBankBranches();
+        List<BankAccount> ListBankBranches { get; }
     }
 }

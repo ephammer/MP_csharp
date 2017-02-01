@@ -86,11 +86,14 @@ namespace DS
             DataSource.listSpecialzation.Add(specialisation);
         }
 
-        public List<BankAccount> ListBankBranches()
+        public List<BankAccount> ListBankBranches
         {
-            List<BankAccount> listBankBranches = new List<BankAccount>(5);
+            get
+            {
+                List<BankAccount> listBankBranches = new List<BankAccount>(5);
 
-            return listBankBranches;
+                return listBankBranches;
+            }
         }
 
         public void RemoveContract(Contract contract)

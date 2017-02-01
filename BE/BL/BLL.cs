@@ -156,9 +156,12 @@ namespace BL
         }
         
 
-        public List<BankAccount> ListBankBranches()
+        public List<BankAccount> ListBankBranches
         {
-            throw new NotImplementedException();
+            get
+            {
+                return dataSource.ListBankBranches;
+            }
         }
 
         public void RemoveContract(Contract contract)

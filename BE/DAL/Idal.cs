@@ -19,7 +19,7 @@ namespace DAL
         void UpdateSpecializationMaxHours(int maxHours);
         void UpdateSpecialization(Specialization.NameField Field);
         */
-		void AddEmployer(Employer employer);
+        void AddEmployer(Employer employer);
 		void RemoveEmployer(Employer employer);
         void UpdatedEmployer(Employer UpdatedEmployer);
 
@@ -66,7 +66,7 @@ namespace DAL
 		List<Employee> ListEmployees { get; set;}
 		List<Employer> ListEmployer { get; set;}
 		List<Contract> ListContract { get; set;}
+        List<BankAccount> ListBankBranches { get; }
 
-		List<BankAccount> ListBankBranches();
     }
 }

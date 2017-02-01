@@ -26,6 +26,7 @@ namespace WpfApp
         {
             InitializeComponent();
             bl = FactoryBL.GetBL();
+
         }
         
         private void Employer_Button_Click(object sender, RoutedEventArgs e)
@@ -50,6 +51,11 @@ namespace WpfApp
         private void Specialization_Button_Click(object sender, RoutedEventArgs e)
         {
             new SpecializationWindow().Show();
+        }
+
+        private void Banks_Button_Click(object sender, RoutedEventArgs e)
+        {
+            new BanksWindow().Show();
         }
     }
 }
