@@ -1651,7 +1651,7 @@
   <Handicap_Accessible>No</Handicap_Accessible>
   <Day_Closed>Friday</Day_Closed>
   <Open_Date>29/12/1982</Open_Date>
-  <Close_Date/>
+  <Close_Date>31/01/2017</Close_Date>
  </BRANCH>
  <BRANCH>
   <Bank_Code>14</Bank_Code>
@@ -24933,9 +24933,9 @@ Yes</Handicap_Accessible>
   <Bank_Name>The First International Bank of Israel Ltd</Bank_Name>
   <Branch_Code>274</Branch_Code>
   <Branch_Name>herzliya</Branch_Name>
-  <Address>29,Maskit St.  Herzliya Pituah 29</Address>
+  <Address>5, senker st. herzeliya 5</Address>
   <City>HERZLIYYA</City>
-  <Zip_Code>4673329</Zip_Code>
+  <Zip_Code>4672505</Zip_Code>
   <POB/>
   <Telephone>03-5645845</Telephone>
   <Fax>09-7720400</Fax>
@@ -25700,9 +25700,9 @@ Yes</Handicap_Accessible>
   <Bank_Name>The First International Bank of Israel Ltd</Bank_Name>
   <Branch_Code>126</Branch_Code>
   <Branch_Name>AVNEI HEN</Branch_Name>
-  <Address>3,ABA HILEL ST.  RAMAT GAN 3</Address>
+  <Address>23,TOVAL ST.  RAMAT GAN 23</Address>
   <City>RAMAT GAN</City>
-  <Zip_Code>5252202</Zip_Code>
+  <Zip_Code>5252238</Zip_Code>
   <POB>3491</POB>
   <Telephone>03-7535200</Telephone>
   <Fax>03-5134126</Fax>
