@@ -5,20 +5,80 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="200">
+        Title="MainWindow" Height="600" Width="600">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="20*"/>
-            <RowDefinition Height="20*"/>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Content="Employer" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100" Click="Employer_Button_Click"/>
-        <Button Grid.Row="1" Content="Employee" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Click="Employee_Button_Click"/>
-        <Button Grid.Row="2" Content="Contract" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100" Click="Contract_Button_Click"/>
-        <Button Grid.Row="3" Content="Specialization" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100" Click="Specialization_Button_Click"/>
-        <Button Grid.Row="4" Content="Banks" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="100" Click="Banks_Button_Click"/>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="20*"/>
+            <ColumnDefinition Width="20*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button 
+            Grid.Row="0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Width="100" 
+            Click="Employer_Button_Click">
+            <StackPanel>
+                <Image Source="Images/businessdood.png" Stretch="Fill" Width="100" Height="120"/>
+                <TextBlock HorizontalAlignment="Center">Employer</TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center"
+            Width="144" 
+            Height="140"
+            Click="Employee_Button_Click"
+           >
+            <StackPanel>
+                <Image Source="Images/employeeicon.png" Stretch="UniformToFill" Width="145" Height="100"/>
+                <TextBlock HorizontalAlignment="Center">Employee</TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button
+            Grid.Row="0" 
+            Grid.Column="2"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Click="Contract_Button_Click" Height="140">
+            <StackPanel>
+                <Image Source="Images/contracts.png" Stretch="UniformToFill" Width="100" Height="100"/>
+                <TextBlock HorizontalAlignment="Center">Contract</TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button 
+            Grid.Row="0"
+            Grid.Column="3"
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Width="120" 
+            Click="Specialization_Button_Click" 
+            Height="140">
+            <StackPanel>
+                <Image Source="Images/gear_icons.png" Stretch="UniformToFill" Width="100" Height="100" HorizontalAlignment="Center"/>
+                <TextBlock HorizontalAlignment="Center">Specialization</TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button Grid.Row="1" 
+                Content="Banks"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" 
+                Width="100" 
+                Click="Banks_Button_Click"
+                Grid.ColumnSpan="4"/>
 
     </Grid>
 </Window>

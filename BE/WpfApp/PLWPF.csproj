@@ -205,5 +205,23 @@
       <Name>DS</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\gear_icons.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\employeeicon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\businessdood.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\businessdood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\employeeicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\contracts.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
