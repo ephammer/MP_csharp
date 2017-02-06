@@ -119,18 +119,8 @@ namespace PL
                 Console.WriteLine("Adress: ");
                 var adress = Convert.ToString(Console.ReadLine());
 
-                Console.WriteLine("Enter the Specialization details");
-                Console.WriteLine("Enter Specialization name:");
-                var sName = Convert.ToString(Console.ReadLine());
-
                 Console.WriteLine("Enter Specialization id:");
                 var sID = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Enter Specialization minimum hours:");
-                var sMinH = Convert.ToInt32(Console.ReadLine());
-
-                Console.WriteLine("Enter Specialization maximum hours:");
-                var sMaxH = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine("Did the employee do his Military Service?");
                 var military = Convert.ToBoolean(Console.ReadLine());
@@ -165,12 +155,7 @@ namespace PL
                             phone,
                             adress,
                             Employee.Degrees.Bachelor,
-                            new Specialization(
-                                sName,
-                                Specialization.NameField.DataStructure,
-                                sID,
-                                sMinH,
-                                sMaxH),
+                            sID,
                             military,
                             new BankAccount(
                                 baNumber,

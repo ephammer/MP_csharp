@@ -61,6 +61,9 @@ namespace BL
         void UpdateContractTimeStart(DateTime StartTime);
         void UpdateContractTimeStop(DateTime StopTime);
         */
+        List<Contract> FindAllContracts(Func<Contract,bool> predicate = null);
+        bool FindAllInterview(Contract contract);
+        bool FindAllContractSignature(Contract contract);
 
         List<Specialization> ListSpecialzation { get; set; }
         List<Employee> ListEmployees { get; set; }

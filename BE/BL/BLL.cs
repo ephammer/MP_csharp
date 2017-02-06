@@ -194,7 +194,7 @@ namespace BL
 
         public delegate bool conditionDelegate(Contract contract);
 
-        public List<Contract> FindAllContracts( conditionDelegate cond)
+        public List<Contract> FindAllContracts(Func<Contract, bool>  cond)
         {
             var list = from item in ListContract where cond(item) select item;
             

@@ -5,13 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         mc:Ignorable="d"
-        Title="ContractWindow" Height="300" Width="950">
+        Title="ContractWindow" Height="300" Width="1000">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="80*" />
             <ColumnDefinition Width="20*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="auto"/>
@@ -38,7 +41,7 @@
             Grid.Row="2"
             Grid.Column="1" Margin="0,1" Click="Update_Button_Click"/>
         <DataGrid 
-            Grid.RowSpan="3"
+            Grid.RowSpan="5"
             Height="auto"
             Width="auto"
             x:Name="ListContract" 
@@ -49,6 +52,13 @@
 
         </DataGrid>
 
+        <Label Grid.Row="3" Grid.Column="1" Content="Filter by:" HorizontalAlignment="Center"/>
+        <ComboBox Grid.Row="4" Grid.Column="1" Name="filter" Width="80">
+            <ComboBoxItem Content="Interview"/>
+            <ComboBoxItem Content="Contract"/>
+            <ComboBoxItem Content="All"/>
+        </ComboBox>
+        <Button Grid.Row="5" Grid.Column="1" Content="Filter" Click="Filter_Button_Click" Width="50"/>
 
     </Grid>
 </Window>

@@ -67,5 +67,34 @@ namespace WpfApp
                 MessageBox.Show("Please select contract to Update");
                 
         }
+
+        private void Filter_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (filter.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select filter");
+                return;
+            }
+            Func<BE.Contract, bool> func = null;
+
+            if (filter.SelectedIndex == 0)
+            {
+                func = MainWindow.bl.FindAllInterview;
+            }
+            if (filter.SelectedIndex==1)
+            {
+                func = MainWindow.bl.FindAllContractSignature;
+            }
+
+            if (filter.SelectedIndex == 2)
+            {
+                ListContract.ItemsSource = MainWindow.bl.ListContract;
+                return;
+            }
+
+            List<BE.Contract> list = MainWindow.bl.FindAllContracts(func);
+            ListContract.ItemsSource = list;
+            
+        }
     }
 }

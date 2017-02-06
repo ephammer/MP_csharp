@@ -23,7 +23,7 @@
         <Image
              Grid.ColumnSpan="4"
             VerticalAlignment="Center"
-            Source="Images/management_logo.png"
+            Source="Images/management_logo_01.png"
             Margin="0,15,0,00"/>
 
         <Button 
@@ -47,8 +47,8 @@
             Height="140"
             Click="Employee_Button_Click"
            >
-            <StackPanel>
-                <Image Source="Images/employeeicon.png" Stretch="UniformToFill" Width="145" Height="100"/>
+            <StackPanel VerticalAlignment="Bottom">
+                <Image Source="Images/employeeicon.png" Stretch="UniformToFill" Width="144" Height="100"/>
                 <TextBlock HorizontalAlignment="Center">Employee</TextBlock>
             </StackPanel>
         </Button>
@@ -75,9 +75,9 @@
             Width="144" 
             Click="Specialization_Button_Click" 
             Height="140">
-            <StackPanel>
-                <Image Source="Images/gear_icons.png" Stretch="UniformToFill" Width="100" Height="100" HorizontalAlignment="Center"/>
-                <TextBlock HorizontalAlignment="Center">Specialization</TextBlock>
+            <StackPanel >
+                <Image Source="Images/gear_icons.png" Stretch="UniformToFill" Width="100" Height="100" HorizontalAlignment="Center" />
+                <TextBlock HorizontalAlignment="Center"  >Specialization</TextBlock>
             </StackPanel>
         </Button>
 

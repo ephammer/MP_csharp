@@ -22,7 +22,13 @@ namespace WpfApp
         public BanksWindow()
         {
             InitializeComponent();
-            banks.ItemsSource = MainWindow.bl.ListBankBranches;
+            try
+            {
+                banks.ItemsSource = MainWindow.bl.ListBankBranches;
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
         private void banks_BeginningEdit(object sender, DataGridBeginningEditEventArgs e)

@@ -44,4 +44,15 @@
     <startDate>2017-02-01T00:00:00</startDate>
     <EndDate>2017-02-02T00:00:00</EndDate>
   </contract>
+  <contract>
+    <id>1</id>
+    <employeeID>23</employeeID>
+    <employerID>24</employerID>
+    <interview>false</interview>
+    <contractSignature>true</contractSignature>
+    <hourlyWageBrute>23</hourlyWageBrute>
+    <hourlyWageNet>34</hourlyWageNet>
+    <startDate>2017-02-03T00:00:00</startDate>
+    <EndDate>2017-02-24T00:00:00</EndDate>
+  </contract>
 </contracts>

@@ -5737,7 +5737,7 @@ Friday</Day_Closed>
   <City>OMER</City>
   <Zip_Code>8496500</Zip_Code>
   <POB/>
-  <Telephone>08-6291729</Telephone>
+  <Telephone>03-6532407</Telephone>
   <Fax>08-6460912</Fax>
   <Free_Telephone/>
   <Handicap_Accessible>Yes</Handicap_Accessible>
@@ -6470,7 +6470,7 @@ Friday</Day_Closed>
   <City>TEL AVIV - YAFO</City>
   <Zip_Code>6744806</Zip_Code>
   <POB/>
-  <Telephone>03-6925060</Telephone>
+  <Telephone>03-6532407</Telephone>
   <Fax>03-6919005</Fax>
   <Free_Telephone/>
   <Handicap_Accessible>Yes</Handicap_Accessible>
@@ -7131,9 +7131,9 @@ Friday</Day_Closed>
   <Bank_Name>Bank Hapoalim B.M</Bank_Name>
   <Branch_Code>456</Branch_Code>
   <Branch_Name>haifa bus. center</Branch_Name>
-  <Address>CITY CENTER BUILDING AV.6 HIFA ISREAL 6</Address>
+  <Address>Flimann Moshe 8 Haifa 8</Address>
   <City>HAIFA</City>
-  <Zip_Code>3541416</Zip_Code>
+  <Zip_Code>3508418</Zip_Code>
   <POB/>
   <Telephone>04-8561333</Telephone>
   <Fax>04-8523833</Fax>
@@ -7217,8 +7217,8 @@ Friday</Day_Closed>
   <Branch_Code>768</Branch_Code>
   <Branch_Name>neve yam</Branch_Name>
   <Address>30 hanachshol st.      rishon-lezion 30</Address>
-
-  <City>RISHON LEZIYYON</City>
+  <City>
+RISHON LEZIYYON</City>
   <Zip_Code>7543730</Zip_Code>
   <POB/>
   <Telephone>03-9637151</Telephone>
@@ -7553,8 +7553,8 @@ Friday</Day_Closed>
   <Close_Date/>
  </BRANCH>
  <BRANCH>
-
-  <Bank_Code>12</Bank_Code>
+  <Bank_Code>
+12</Bank_Code>
   <Bank_Name>Bank Hapoalim B.M</Bank_Name>
   <Branch_Code>685</Branch_Code>
   <Branch_Name>lod</Branch_Name>
@@ -7889,8 +7889,8 @@ Friday</Day_Closed>
   <Fax>02-6283368</Fax>
   <Free_Telephone/>
   <Handicap_Accessible>No</Handicap_Accessible>
-
-  <Day_Closed>Friday</Day_Closed>
+  <Day_Closed>
+Friday</Day_Closed>
   <Open_Date>01/02/1949</Open_Date>
   <Close_Date/>
  </BRANCH>
@@ -8225,8 +8225,8 @@ Friday</Day_Closed>
   <Address>58 hameyasdim st.          even-yehuda 58</Address>
   <City>EVEN YEHUDA</City>
   <Zip_Code>40500</Zip_Code>
-
   <POB/>
+
   <Telephone>09-8994125</Telephone>
   <Fax>09-8998614</Fax>
   <Free_Telephone/>
@@ -8564,8 +8564,8 @@ Friday</Day_Closed>
   <Branch_Code>557</Branch_Code>
   <Branch_Name>kiryat krinizy</Branch_Name>
   <Address>9 spir st.,kiryat krinizi, ramat gan 9</Address>
-
-  <City>RAMAT GAN</City>
+  <City>
+RAMAT GAN</City>
   <Zip_Code>5262209</Zip_Code>
   <POB/>
   <Telephone>03-5301818</Telephone>

@@ -192,13 +192,12 @@ namespace BL
             return (now - intBirthday) / 10000;
         }
 
-        public delegate bool conditionDelegate(Contract contract);
 
-        public List<Contract> FindAllContracts(conditionDelegate cond)
+        public List<Contract> FindAllContracts(Func<Contract,bool> cond)
         {
             var list = from item in ListContract where cond(item) select item;
 
-            return (List<Contract>)list;
+            return list.ToList();
 
         }
 
@@ -213,7 +212,7 @@ namespace BL
 
         }
 
-        public int CountAllContracts(conditionDelegate cond)
+        public int CountAllContracts(Func<Contract,bool> cond)
         {
             var count = from item in ListContract where cond(item) select item;
 

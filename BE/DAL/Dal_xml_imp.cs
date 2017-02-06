@@ -313,8 +313,7 @@ namespace DAL
                 }
                 catch (Exception)
                 {
-                    string xmlServerPath = @"http://www.jct.ac.il/~coshri/atm.xml";
-                    wc.DownloadFile(xmlServerPath, xmlLocalPath);
+                    throw new Exception("A problem with the download the files occured, please check your internet connection");
                 }
                 finally
                 {
